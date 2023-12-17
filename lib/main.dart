@@ -41,8 +41,9 @@ class HomeApp extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(0, 0, 0, 1),
-        title: Text("ADOPT PET"),
-        centerTitle: true,
+        flexibleSpace: Image.asset("assets/icons/pet.png", fit: BoxFit.contain),
+        //title: Text("ADOPT PET"),
+        //centerTitle: true,
       ),
       backgroundColor: Color.fromRGBO(51, 51, 51, 1),
       body: GridView.builder(
