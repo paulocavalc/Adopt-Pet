@@ -14,12 +14,26 @@ void main() {
 
 class HomeApp extends StatelessWidget {
   final List _photos = [
-    Data(image: "assets/images/user0.png", text: "João Paulo"),
-    Data(image: "assets/images/user1.png", text: "João Paulo"),
-    Data(image: "assets/images/user2.png", text: "João Paulo"),
-    Data(image: "assets/images/user3.png", text: "João Paulo"),
-    Data(image: "assets/images/user4.png", text: "João Paulo"),
-    Data(image: "assets/images/user5.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet0.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet1.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet2.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet3.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet4.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet5.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet6.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet7.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet8.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet9.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet10.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet11.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet12.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet13.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet14.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet15.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet16.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet17.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet18.jpg", text: "João Paulo"),
+    Data(image: "assets/images/pet19.jpg", text: "João Paulo"),
   ];
 
   @override
