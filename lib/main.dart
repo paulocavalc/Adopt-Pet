@@ -46,54 +46,68 @@ class HomeApp extends StatelessWidget {
       ),
       backgroundColor: Color.fromRGBO(51, 51, 51, 1),
       body: GridView.builder(
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          itemCount: _photos.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10),
-          itemBuilder: (context, index) {
-            return Column(
-              children: [
-                Container(
-                  width: double.infinity,
-                  height: 200,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      image: DecorationImage(
-                          image: AssetImage(_photos[index].image),
-                          fit: BoxFit.cover
-                      )
-                  ),
+        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        itemCount: _photos.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 10, 
+          mainAxisSpacing: 10
+        ),
+        itemBuilder: (context, index) {
+          return Column(
+            children: [
+              Container(
+                width: double.infinity,
+                height: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  image: DecorationImage(
+                    image: AssetImage(_photos[index].image),
+                    fit: BoxFit.cover
+                  )
                 ),
-              ],
-            );
-          }
+              ),
+            ],
+          );
+        }
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Color.fromRGBO(0, 0, 0, 1),
-        child: Icon(Icons.add),
+        child: Icon(Icons.add, size: 30),
       ),
-      bottomNavigationBar: BottomAppBar(
-        shape: CircularNotchedRectangle(),
-        //color: Theme.of(context).colorScheme.primary,
-        color: const Color.fromARGB(255, 0, 0, 0),
-        child: IconTheme(
-          data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
-          child: Padding(
-            padding: EdgeInsets.all(12.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                IconButton(
-                  icon: Icon(Icons.home),
-                  onPressed: () {},
-                ),
-                IconButton(
-                  icon: Icon(Icons.person),
-                  onPressed: () {},
-                )
-              ],
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.all(Radius.circular(30)),
+        child: BottomAppBar(
+          shape: CircularNotchedRectangle(),
+          color: const Color.fromARGB(255, 0, 0, 0),
+          child: IconTheme(
+            data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
+            child: Padding(
+              padding: EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.home),
+                    onPressed: () {},
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.search),
+                    onPressed: () {},
+                  ),
+                  SizedBox(width: 20,),
+                  IconButton(
+                    icon: Icon(Icons.notifications_active_outlined),
+                    onPressed: () {},
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.person),
+                    onPressed: () {},
+                  )
+                ],
+              ),
             ),
           ),
         ),
