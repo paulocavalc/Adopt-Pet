@@ -50,7 +50,7 @@ class HomeApp extends StatelessWidget {
         itemCount: _photos.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          crossAxisSpacing: 10, 
+          crossAxisSpacing: 10,
           mainAxisSpacing: 10
         ),
         itemBuilder: (context, index) {
@@ -77,37 +77,34 @@ class HomeApp extends StatelessWidget {
         backgroundColor: Color.fromRGBO(0, 0, 0, 1),
         child: Icon(Icons.add, size: 30),
       ),
-      bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.all(Radius.circular(30)),
-        child: BottomAppBar(
-          shape: CircularNotchedRectangle(),
-          color: const Color.fromARGB(255, 0, 0, 0),
-          child: IconTheme(
-            data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
-            child: Padding(
-              padding: EdgeInsets.all(10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  IconButton(
-                    icon: Icon(Icons.home),
-                    onPressed: () {},
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.search),
-                    onPressed: () {},
-                  ),
-                  SizedBox(width: 20,),
-                  IconButton(
-                    icon: Icon(Icons.notifications_active_outlined),
-                    onPressed: () {},
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.person),
-                    onPressed: () {},
-                  )
-                ],
-              ),
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        color: const Color.fromARGB(255, 0, 0, 0),
+        child: IconTheme(
+          data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
+          child: Padding(
+            padding: EdgeInsets.all(10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                IconButton(
+                  icon: Icon(Icons.home),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: Icon(Icons.search),
+                  onPressed: () {},
+                ),
+                SizedBox(width: 20,),
+                IconButton(
+                  icon: Icon(Icons.notifications_active_outlined),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: Icon(Icons.person),
+                  onPressed: () {},
+                )
+              ],
             ),
           ),
         ),
