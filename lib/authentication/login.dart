@@ -1,188 +1,166 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors
 
+import 'package:boa_tarde/authentication/signup.dart';
+import 'package:boa_tarde/main.dart';
 import 'package:flutter/material.dart';
 
-class LoginApp extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  
+  final email = TextEditingController();
+  final password = TextEditingController();
+  final formKey = GlobalKey<FormState>();
   final loading = ValueNotifier<bool>(false);
+
+  bool isVisible = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: true,
-      backgroundColor: Color.fromRGBO(51, 51, 51, 1),
+      backgroundColor: Color.fromARGB(255, 0, 0, 0),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Color.fromARGB(255, 235, 230, 230),
+        backgroundColor: Color.fromARGB(255, 0, 0, 0),
         leading: IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.push(context,
+                MaterialPageRoute(
+                  builder: (context) => HomeApp()));
           },
           icon: Icon(
             Icons.arrow_back_ios,
             size: 20,
-            color: Colors.black,
+            color: Colors.white,
           ),
         ),
       ),
-      body: SingleChildScrollView(
-          child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 80, vertical: 40),
-        height: MediaQuery.of(context).size.height - 50,
-        width: double.infinity,
-        color: Color.fromARGB(255, 235, 230, 230),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Column(
-              children: <Widget>[
-                Text(
-                  "ADOPT PET",
-                  style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.green[800]),
-                ),
-                SizedBox(height: 5,),
-              ],
-            ),
-            TextField(
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                filled: true,
-                hintText: "E-mail",
-                prefixIcon: Icon(Icons.email),
-                //prefixIcon: IconButton(
-                //  onPressed: () {},
-                //  icon: Image.asset(
-                //    "assets/email.png", 
-                //    width: 25, 
-                //    color: Color.fromARGB(255, 111, 111, 111),
-                //  ),
-                //),
-                fillColor: Color.fromARGB(255, 255, 255, 255),
-                border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(60),
-                ),
-              ),
-            ),
-            TextField(
-              obscureText: true,
-              keyboardType: TextInputType.visiblePassword,
-              decoration: InputDecoration(
-                filled: true,
-                hintText: "Senha",
-                prefixIcon: Icon(Icons.lock),
-                suffixIcon: Icon(Icons.visibility_off),
-                //prefixIcon: IconButton(
-                //  onPressed: () {},
-                //  icon: Image.asset(
-                //    "assets/password.png", 
-                //    width: 30, 
-                //    color: Color.fromARGB(255, 111, 111, 111),
-                //  ),
-                //),
-                fillColor: Color.fromARGB(255, 255, 255, 255),
-                border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(60),
-                ),
-              ),
-            ),
-            //Column(
-            //  children: <Widget>[
-            //    makeInput(label: "E-mail"),
-            //    makeInput(label: "Senha", obscureText: true),
-            //  ],
-            //),
-            Column(
-              children: <Widget>[
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(60),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Form(
+              key: formKey,
+              child: Column(
+                children: [
+                  Image.asset(
+                    "assets/icons/pet.jpg",
+                    width: 300,
                   ),
-                  child: MaterialButton(
-                    minWidth: double.infinity,
-                    height: 60,
-                    color: Colors.green[800],
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(60)
+
+                  SizedBox(height: 20),
+
+                  Container(
+                    margin: EdgeInsets.all(10),
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(60),
+                        color: Color.fromRGBO(239, 239, 239, 1)
                     ),
-                    child: AnimatedBuilder(
+                    child: TextFormField(
+                      controller: email,
+                      decoration: InputDecoration(
+                        icon: Icon(Icons.person),
+                        border: InputBorder.none,
+                        hintText: "E-mail",
+                      ),
+                    ),
+                  ),
+                  
+                  Container(
+                    margin: EdgeInsets.all(10),
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(60),
+                        color: Color.fromRGBO(239, 239, 239, 1)
+                    ),
+                    child: TextFormField(
+                      controller: password,
+                      obscureText: !isVisible,
+                      decoration: InputDecoration(
+                          icon: Icon(Icons.lock),
+                          border: InputBorder.none,
+                          hintText: "Senha",
+                          suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  isVisible = !isVisible;
+                                });
+                              },
+                              icon: Icon(isVisible
+                                  ? Icons.visibility
+                                  : Icons.visibility_off))),
+                    ),
+                  ),
+
+                  SizedBox(height: 10),
+                  
+                  Container(
+                    height: 60,
+                    width: MediaQuery.of(context).size.width - 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(60),
+                    ),
+                    child: MaterialButton(
+                      minWidth: double.infinity,
+                      height: 60,
+                      color: Colors.green[800],
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(60)
+                      ),
+                      child: AnimatedBuilder(
                         animation: loading,
                         builder: (context, _) {
-                          return loading.value
-                              ? const SizedBox(
+                          return loading.value 
+                              ? SizedBox(
                                   width: 25,
                                   height: 25,
                                   child: CircularProgressIndicator(color: Colors.white,),
-                                )
+                              )
                               : const Text(
-                                  "ENTRAR",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      color: Colors.white,
-                                      fontSize: 17
-                                  ),
-                                );
-                        }),
-                    onPressed: () => loading.value = !loading.value,
+                                "ENTRAR",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
+                                  fontSize: 17
+                                ),
+                              );
+                        }
+                      ),
+                      onPressed: () => loading.value = !loading.value,
+                    ),
                   ),
-                ),
-              ],
+                  
+                  SizedBox(height: 10),
+                  
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Não tem uma conta?",
+                      style: TextStyle(
+                        color: Colors.white
+                      )),
+                      
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignUp()));
+                          },
+                          child: Text("Cadastre-se", style: TextStyle(color: Color.fromARGB(255, 5, 69, 247))))
+                    ],
+                  ),
+                ],
+              ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  "Não tem uma conta?",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 15,
-                      color: Colors.black),
-                ),
-                Text(
-                  " Cadastre-se",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 15,
-                      color: Colors.red[900]),
-                )
-              ],
-            )
-          ],
-        ),
-      )),
-    );
-  }
-  // Nao Text fiel nada
-  Widget makeInput({label, obscureText = false}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text(
-          label,
-          style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey[600]),
-        ),
-        SizedBox(
-          height: 5,
-        ),
-        TextField(
-          obscureText: obscureText,
-          decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-            enabledBorder:
-                OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
-            border:
-                OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
           ),
         ),
-        //SizedBox(height: 15,),
-      ],
+      ),
     );
   }
 }

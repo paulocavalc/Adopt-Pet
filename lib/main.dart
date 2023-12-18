@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, unnecessary_import, use_key_in_widget_constructors, sort_child_properties_last, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
 
+import 'package:boa_tarde/authentication/login.dart';
 import 'package:boa_tarde/model/modal.dart';
 import 'package:boa_tarde/loading/splash.dart';
 import 'package:flutter/material.dart';
@@ -89,7 +90,9 @@ class HomeApp extends StatelessWidget {
               children: [
                 IconButton(
                   icon: Icon(Icons.home),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeApp()));
+                  },
                 ),
                 IconButton(
                   icon: Icon(Icons.search),
@@ -102,7 +105,9 @@ class HomeApp extends StatelessWidget {
                 ),
                 IconButton(
                   icon: Icon(Icons.person),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+                  },
                 )
               ],
             ),
