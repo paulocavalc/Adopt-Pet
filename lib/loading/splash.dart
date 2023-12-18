@@ -1,7 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, unnecessary_new, avoid_unnecessary_containers, sort_child_properties_last, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
 
 import 'dart:async';
-
 import 'package:boa_tarde/main.dart';
 import 'package:flutter/material.dart';
 
