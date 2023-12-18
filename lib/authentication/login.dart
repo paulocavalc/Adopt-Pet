@@ -9,7 +9,7 @@ class LoginApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromRGBO(51, 51, 51, 1),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Color.fromARGB(255, 235, 230, 230),
