@@ -47,31 +47,25 @@ class HomeApp extends StatelessWidget {
       ),
       backgroundColor: Color.fromRGBO(51, 51, 51, 1),
       body: GridView.builder(
-        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        itemCount: _photos.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10
-        ),
-        itemBuilder: (context, index) {
-          return Column(
-            children: [
-              Container(
-                width: double.infinity,
-                height: 200,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  image: DecorationImage(
-                    image: AssetImage(_photos[index].image),
-                    fit: BoxFit.cover
-                  )
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          itemCount: _photos.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10),
+          itemBuilder: (context, index) {
+            return Column(
+              children: [
+                Container(
+                  width: double.infinity,
+                  height: 200,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      image: DecorationImage(
+                          image: AssetImage(_photos[index].image),
+                          fit: BoxFit.cover)),
                 ),
-              ),
-            ],
-          );
-        }
-      ),
+              ],
+            );
+          }),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
@@ -91,14 +85,20 @@ class HomeApp extends StatelessWidget {
                 IconButton(
                   icon: Icon(Icons.home),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeApp()));
+                    Navigator.push(context, 
+                      MaterialPageRoute(
+                        builder: (context) => HomeApp()
+                      )
+                    );
                   },
                 ),
                 IconButton(
                   icon: Icon(Icons.search),
                   onPressed: () {},
                 ),
-                SizedBox(width: 20,),
+                SizedBox(
+                  width: 20,
+                ),
                 IconButton(
                   icon: Icon(Icons.notifications_active_outlined),
                   onPressed: () {},
@@ -106,7 +106,8 @@ class HomeApp extends StatelessWidget {
                 IconButton(
                   icon: Icon(Icons.person),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()));
                   },
                 )
               ],
