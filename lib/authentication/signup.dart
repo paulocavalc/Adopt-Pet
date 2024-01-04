@@ -49,7 +49,7 @@ class _SignUpState extends State<SignUp> {
                     margin: EdgeInsets.all(10),
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(60),
+                        borderRadius: BorderRadius.circular(10),
                         color: Color.fromRGBO(239, 239, 239, 1)),
                     child: TextFormField(
                       controller: email,
@@ -65,7 +65,7 @@ class _SignUpState extends State<SignUp> {
                     margin: EdgeInsets.all(10),
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(60),
+                        borderRadius: BorderRadius.circular(10),
                         color: Color.fromRGBO(239, 239, 239, 1)),
                     child: TextFormField(
                       controller: password,
@@ -92,7 +92,7 @@ class _SignUpState extends State<SignUp> {
                     margin: EdgeInsets.all(10),
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(60),
+                        borderRadius: BorderRadius.circular(10),
                         color: Color.fromRGBO(239, 239, 239, 1)),
                     child: TextFormField(
                       controller: confirmPassword,
@@ -119,14 +119,14 @@ class _SignUpState extends State<SignUp> {
                     height: 60,
                     width: MediaQuery.of(context).size.width - 50,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(60),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     child: MaterialButton(
                       minWidth: double.infinity,
                       height: 60,
                       color: Color.fromARGB(255, 8, 53, 176),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(60)
+                        borderRadius: BorderRadius.circular(10)
                       ),
                       child: AnimatedBuilder(
                         animation: loading,
@@ -156,7 +156,7 @@ class _SignUpState extends State<SignUp> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Já tem uma conta?"),
+                      Text("Já tem uma conta?", style: TextStyle(color: Colors.white),),
                       TextButton(
                           onPressed: () {
                             Navigator.push(
@@ -164,7 +164,8 @@ class _SignUpState extends State<SignUp> {
                                 MaterialPageRoute(
                                     builder: (context) => const LoginScreen()));
                           },
-                          child: Text("Login", style: TextStyle(color: Color.fromARGB(255, 247, 98, 5))))
+                          child: Text("Login", style: TextStyle(color: Color.fromARGB(255, 0, 156, 3)))
+                      )
                     ],
                   )
                 ],

@@ -59,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     margin: EdgeInsets.all(10),
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(60),
+                        borderRadius: BorderRadius.circular(10),
                         color: Color.fromRGBO(239, 239, 239, 1)
                     ),
                     child: TextFormField(
@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     margin: EdgeInsets.all(10),
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(60),
+                        borderRadius: BorderRadius.circular(10),
                         color: Color.fromRGBO(239, 239, 239, 1)
                     ),
                     child: TextFormField(
@@ -104,14 +104,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 60,
                     width: MediaQuery.of(context).size.width - 50,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(60),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     child: MaterialButton(
                       minWidth: double.infinity,
                       height: 60,
                       color: Colors.green[800],
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(60)
+                        borderRadius: BorderRadius.circular(10)
                       ),
                       child: AnimatedBuilder(
                         animation: loading,
