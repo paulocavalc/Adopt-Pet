@@ -46,26 +46,28 @@ class HomeApp extends StatelessWidget {
         flexibleSpace: Image.asset("assets/icons/pet.jpg"),
       ),
       backgroundColor: Color.fromRGBO(51, 51, 51, 1),
-      body: GridView.builder(
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
           itemCount: _photos.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10),
-          itemBuilder: (context, index) {
-            return Column(
-              children: [
-                Container(
-                  width: double.infinity,
-                  height: 200,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      image: DecorationImage(
-                          image: AssetImage(_photos[index].image),
-                          fit: BoxFit.cover)),
+            crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10),
+            itemBuilder: (context, index) {
+              return Container(
+                width: double.infinity,
+                height: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  image: DecorationImage(
+                    image: AssetImage(_photos[index].image),
+                    fit: BoxFit.cover
+                  )
                 ),
-              ],
-            );
-          }),
+              );
+            }
+          )
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
@@ -85,11 +87,8 @@ class HomeApp extends StatelessWidget {
                 IconButton(
                   icon: Icon(Icons.home),
                   onPressed: () {
-                    Navigator.push(context, 
-                      MaterialPageRoute(
-                        builder: (context) => HomeApp()
-                      )
-                    );
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomeApp()));
                   },
                 ),
                 IconButton(
