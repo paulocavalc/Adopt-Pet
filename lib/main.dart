@@ -46,31 +46,41 @@ class HomeApp extends StatelessWidget {
         backgroundColor: Color.fromRGBO(0, 0, 0, 1),
         flexibleSpace: Image.asset("assets/icons/pet.jpg"),
       ),
+
       backgroundColor: Color.fromRGBO(51, 51, 51, 1),
       body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: GridView.builder(
-              padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-              itemCount: _photos.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10),
-              itemBuilder: (context, index) {
-                return InkWell(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => DogImage()));
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    height: 200,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        image: DecorationImage(
-                            image: AssetImage(_photos[index].image),
-                            fit: BoxFit.cover)),
-                  ),
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+          itemCount: _photos.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10
+          ),
+          itemBuilder: (context, index) {
+            return InkWell(
+              onTap: () {
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => DogImage())
                 );
-              })),
+              },
+              child: Container(
+                width: double.infinity,
+                height: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  image: DecorationImage(
+                    image: AssetImage(_photos[index].image),
+                    fit: BoxFit.cover
+                  )
+                ),
+              ),
+            );
+          }
+        )
+      ),
+      
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
