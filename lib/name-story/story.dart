@@ -8,7 +8,7 @@ class StoryPets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Container(
         height: 50,
         width: 50,
@@ -20,3 +20,18 @@ class StoryPets extends StatelessWidget {
     );
   }
 }
+
+//Column(
+//        children: [
+//          SizedBox(
+//            height: 220,
+//            child: ListView.builder(
+//              itemCount: 20,
+//              scrollDirection: Axis.horizontal,
+//              itemBuilder: (context, index) {
+//                return StoryPets();
+//              },
+//            ),
+//          )
+//        ],
+//      ),
