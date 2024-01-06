@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unnecessary_import, use_key_in_widget_constructors, sort_child_properties_last, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
 
 import 'package:boa_tarde/authentication/login.dart';
+import 'package:boa_tarde/image-view/dog.dart';
 import 'package:boa_tarde/model/modal.dart';
 import 'package:boa_tarde/loading/splash.dart';
 import 'package:flutter/material.dart';
@@ -47,27 +48,29 @@ class HomeApp extends StatelessWidget {
       ),
       backgroundColor: Color.fromRGBO(51, 51, 51, 1),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: GridView.builder(
-          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-          itemCount: _photos.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10),
-            itemBuilder: (context, index) {
-              return Container(
-                width: double.infinity,
-                height: 200,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  image: DecorationImage(
-                    image: AssetImage(_photos[index].image),
-                    fit: BoxFit.cover
-                  )
-                ),
-              );
-            }
-          )
-      ),
+          padding: const EdgeInsets.all(8.0),
+          child: GridView.builder(
+              padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+              itemCount: _photos.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10),
+              itemBuilder: (context, index) {
+                return InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => DogImage()));
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: 200,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                            image: AssetImage(_photos[index].image),
+                            fit: BoxFit.cover)),
+                  ),
+                );
+              })),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
