@@ -47,22 +47,19 @@ class HomeApp extends StatelessWidget {
         backgroundColor: Color.fromRGBO(0, 0, 0, 1),
         flexibleSpace: Image.asset("assets/icons/pet.jpg"),
       ),
-      
       backgroundColor: Color.fromRGBO(51, 51, 51, 1),
-      
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8.0),
         child: GridView.builder(
           padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
           itemCount: _photos.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10
-          ),
+            crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10),
           itemBuilder: (context, index) {
             return InkWell(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => DogImage()));
+                  MaterialPageRoute(builder: (context) => DogImage()));
               },
               child: Container(
                 width: double.infinity,
@@ -79,14 +76,12 @@ class HomeApp extends StatelessWidget {
           }
         )
       ),
-      
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Color.fromRGBO(0, 0, 0, 1),
         child: Icon(Icons.add, size: 30),
       ),
-
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
         color: const Color.fromARGB(255, 0, 0, 0),
@@ -130,7 +125,6 @@ class HomeApp extends StatelessWidget {
           ),
         ),
       ),
-
     );
   }
 }

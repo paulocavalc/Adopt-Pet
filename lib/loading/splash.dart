@@ -42,7 +42,7 @@ class StartState extends State<SplashScreen> {
             Center(
               child: Container(
                 child: Image.asset("assets/icons/logo.png"),
-                width: 200,
+                width: 150,
               ),
             ),
           ],
