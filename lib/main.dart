@@ -48,6 +48,7 @@ class HomeApp extends StatelessWidget {
       ),
 
       backgroundColor: Color.fromRGBO(51, 51, 51, 1),
+      
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: GridView.builder(
@@ -125,6 +126,7 @@ class HomeApp extends StatelessWidget {
           ),
         ),
       ),
+
     );
   }
 }
