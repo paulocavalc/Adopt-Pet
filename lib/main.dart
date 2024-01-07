@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unnecessary_import, use_key_in_widget_constructors, sort_child_properties_last, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
 
 import 'package:boa_tarde/authentication/login.dart';
+import 'package:boa_tarde/home/story.dart';
 import 'package:boa_tarde/image-view/dog.dart';
 import 'package:boa_tarde/model/modal.dart';
 import 'package:boa_tarde/loading/splash.dart';
@@ -46,7 +47,7 @@ class HomeApp extends StatelessWidget {
         backgroundColor: Color.fromRGBO(0, 0, 0, 1),
         flexibleSpace: Image.asset("assets/icons/pet.jpg"),
       ),
-
+      
       backgroundColor: Color.fromRGBO(51, 51, 51, 1),
       
       body: Padding(
@@ -112,7 +113,10 @@ class HomeApp extends StatelessWidget {
                 ),
                 IconButton(
                   icon: Icon(Icons.notifications_active_outlined),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => StoryPets()));
+                  },
                 ),
                 IconButton(
                   icon: Icon(Icons.person),
