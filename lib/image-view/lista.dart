@@ -79,7 +79,7 @@ class _MainHomeState extends State<MainHome> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        margin: const EdgeInsets.all(5),
+        margin: const EdgeInsets.all(8.0),
         child: Column(
           children: [
             /// Tab Bar
@@ -107,8 +107,8 @@ class _MainHomeState extends State<MainHome> {
                           child: AnimatedContainer(
                             duration: const Duration(milliseconds: 300),
                             margin: const EdgeInsets.all(5),
-                            width: 100,
-                            height: 55,
+                            width: 80,
+                            height: 80,
                             decoration: BoxDecoration(
                               color: current == index
                                   ? Colors.white70
