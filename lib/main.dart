@@ -57,11 +57,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 70,
+        toolbarHeight: 50,
         backgroundColor: Color.fromRGBO(0, 0, 0, 1),
-        flexibleSpace: Image.asset("assets/icons/pet.jpg"),
+        flexibleSpace: Image.asset("assets/icons/tema.png", fit: BoxFit.contain),
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(40.0),
+          preferredSize: Size.fromHeight(50),
           child: StoryBar(),
         ),
       ),
