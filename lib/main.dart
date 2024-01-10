@@ -1,22 +1,36 @@
-// ignore_for_file: prefer_const_constructors, unnecessary_import, use_key_in_widget_constructors, sort_child_properties_last, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_constructors_in_immutables, library_private_types_in_public_api
 
-import 'package:boa_tarde/authentication/login.dart';
-import 'package:boa_tarde/home/story.dart';
-import 'package:boa_tarde/image-view/dog.dart';
+import 'package:boa_tarde/loading/splash.dart';
 import 'package:boa_tarde/model/modal.dart';
-//import 'package:boa_tarde/loading/splash.dart';
+import 'package:boa_tarde/story-bar/story.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    //home: SplashScreen(),
-  ));
+  runApp(MyApp());
 }
 
-class HomeApp extends StatelessWidget {
-  final List _photos = [
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Adopt Pet',
+      debugShowCheckedModeBanner: false,
+      home: SplashScreen(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key? key, required this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  final List<Data> _images = [
     Data(image: "assets/images/pet0.jpg"),
     Data(image: "assets/images/pet1.jpg"),
     Data(image: "assets/images/pet2.jpg"),
@@ -46,84 +60,58 @@ class HomeApp extends StatelessWidget {
         toolbarHeight: 70,
         backgroundColor: Color.fromRGBO(0, 0, 0, 1),
         flexibleSpace: Image.asset("assets/icons/pet.jpg"),
-      ),
-      backgroundColor: Color.fromRGBO(51, 51, 51, 1),
-      body: Padding(
-        padding: EdgeInsets.all(8.0),
-        child: GridView.builder(
-          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-          itemCount: _photos.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10),
-          itemBuilder: (context, index) {
-            return InkWell(
-              onTap: () {
-                Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => DogImage()));
-              },
-              child: Container(
-                width: double.infinity,
-                height: 200,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  image: DecorationImage(
-                    image: AssetImage(_photos[index].image),
-                    fit: BoxFit.cover
-                  )
-                ),
-              ),
-            );
-          }
-        )
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Color.fromRGBO(0, 0, 0, 1),
-        child: Icon(Icons.add, size: 30),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        shape: CircularNotchedRectangle(),
-        color: const Color.fromARGB(255, 0, 0, 0),
-        child: IconTheme(
-          data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
-          child: Padding(
-            padding: EdgeInsets.all(10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                IconButton(
-                  icon: Icon(Icons.home),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeApp()));
-                  },
-                ),
-                IconButton(
-                  icon: Icon(Icons.search),
-                  onPressed: () {},
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                IconButton(
-                  icon: Icon(Icons.notifications_active_outlined),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => StoryPets()));
-                  },
-                ),
-                IconButton(
-                  icon: Icon(Icons.person),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => LoginScreen()));
-                  },
-                )
-              ],
-            ),
-          ),
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(40.0),
+          child: StoryBar(),
         ),
+      ),
+
+      backgroundColor: Color.fromRGBO(43, 43, 43, 1),
+
+      body: GridView.builder(
+        itemCount: _images.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 1,
+          mainAxisSpacing: 4.0,
+          crossAxisSpacing: 4.0,
+        ),
+        itemBuilder: (BuildContext context, int index) {
+          return Image.network(
+            _images[index].image,
+            fit: BoxFit.cover,
+          );
+        },
+      ),
+
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+        type: BottomNavigationBarType.fixed,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Início',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Pesquisa',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_circle_outline),
+            label: 'Adicionar',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite_border),
+            label: 'Favoritos',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            label: 'Perfil',
+          ),
+        ],
+        currentIndex: 0,
+        selectedItemColor: Color.fromARGB(255, 255, 255, 255),
+        unselectedItemColor: Color.fromARGB(255, 128, 128, 128),
       ),
     );
   }
