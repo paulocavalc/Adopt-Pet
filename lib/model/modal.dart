@@ -1,5 +1,5 @@
 class Data {
-  String image;
-  
+  final String image;
+
   Data({required this.image});
 }
