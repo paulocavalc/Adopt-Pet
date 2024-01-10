@@ -30,7 +30,7 @@ class StoryBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey,
+      color: Color.fromARGB(255, 0, 0, 0),
       height: 50.0,
       child: ListView.builder(
         itemCount: _stories.length,

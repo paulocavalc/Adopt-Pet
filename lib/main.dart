@@ -4,14 +4,14 @@ import 'package:boa_tarde/authentication/login.dart';
 import 'package:boa_tarde/home/story.dart';
 import 'package:boa_tarde/image-view/dog.dart';
 import 'package:boa_tarde/model/modal.dart';
-import 'package:boa_tarde/loading/splash.dart';
+//import 'package:boa_tarde/loading/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: SplashScreen(),
+    //home: SplashScreen(),
   ));
 }
 

@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors_in_immutables, library_private_types_in_public_api, prefer_const_constructors
 
 import 'package:boa_tarde/image-view/story.dart';
+import 'package:boa_tarde/loading/splash.dart';
 import 'package:boa_tarde/model/modal.dart';
 import 'package:flutter/material.dart';
 
@@ -12,11 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Instagram Feature 41',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Instagram Feature 41'),
+      title: 'Adopt Pet',
+      debugShowCheckedModeBanner: false,
+      home: SplashScreen(),
     );
   }
 }
@@ -58,15 +57,16 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          //title: Text(widget.title),
           toolbarHeight: 70,
           backgroundColor: Color.fromRGBO(0, 0, 0, 1),
           flexibleSpace: Image.asset("assets/icons/pet.jpg"),
           bottom: PreferredSize(
-          preferredSize: Size.fromHeight(50.0),
-          child: StoryBar(),
+            preferredSize: Size.fromHeight(40.0),
+            child: StoryBar(),
         ),
         ),
+
+        backgroundColor: Color.fromRGBO(43, 43, 43, 1),
 
         body: GridView.builder(
           itemCount: _images.length,
@@ -83,9 +83,9 @@ class _MyHomePageState extends State<MyHomePage> {
             );
           },
         ),
-
+        
         bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+          items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
@@ -106,11 +106,10 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: Icon(Icons.person_outline),
               label: 'Profile',
             ),
-        ],
-          
-        currentIndex: 0,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.grey,
+          ],
+          currentIndex: 0,
+          selectedItemColor: Colors.blue,
+          unselectedItemColor: Colors.grey,
         ),
     );
   }
