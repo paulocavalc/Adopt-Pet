@@ -1,161 +1,104 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_constructors, prefer_void_to_null, non_constant_identifier_names, unused_field, avoid_print
 
 import 'package:boa_tarde/authentication/signup.dart';
-import 'package:boa_tarde/main.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
-
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
+void main() {
+  runApp(MyAppLogin());
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  
-  final email = TextEditingController();
-  final password = TextEditingController();
-  final formKey = GlobalKey<FormState>();
-  final loading = ValueNotifier<bool>(false);
-
-  bool isVisible = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color.fromARGB(255, 0, 0, 0),
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Color.fromARGB(255, 0, 0, 0),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(
-                  builder: (context) => MyApp()));
-          },
-          icon: Icon(
-            Icons.arrow_back_ios,
-            size: 20,
-            color: Colors.white,
-          ),
-        ),
+class MyAppLogin extends StatelessWidget {
+ @override
+ Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Login',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Form(
-              key: formKey,
-              child: Column(
-                children: [
-                  Image.asset(
-                    "assets/icons/pet.jpg",
-                    width: 300,
-                  ),
+      debugShowCheckedModeBanner: false,
+      home: LoginPage(),
+    );
+ }
+}
 
-                  SizedBox(height: 20),
+class LoginPage extends StatefulWidget {
+ @override
+ _LoginPageState createState() => _LoginPageState();
+}
 
-                  Container(
-                    margin: EdgeInsets.all(10),
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color.fromRGBO(239, 239, 239, 1)
-                    ),
-                    child: TextFormField(
-                      controller: email,
-                      decoration: InputDecoration(
-                        icon: Icon(Icons.person),
-                        border: InputBorder.none,
-                        hintText: "E-mail",
-                      ),
-                    ),
-                  ),
-                  
-                  Container(
-                    margin: EdgeInsets.all(10),
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color.fromRGBO(239, 239, 239, 1)
-                    ),
-                    child: TextFormField(
-                      controller: password,
-                      obscureText: !isVisible,
-                      decoration: InputDecoration(
-                          icon: Icon(Icons.lock),
-                          border: InputBorder.none,
-                          hintText: "Senha",
-                          suffixIcon: IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  isVisible = !isVisible;
-                                });
-                              },
-                              icon: Icon(isVisible
-                                  ? Icons.visibility
-                                  : Icons.visibility_off))),
-                    ),
-                  ),
+class _LoginPageState extends State<LoginPage> {
+ final _formKey = GlobalKey<FormState>();
+ String _email = '';
+ String _password = '';
 
-                  SizedBox(height: 10),
-                  
-                  Container(
-                    height: 60,
-                    width: MediaQuery.of(context).size.width - 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: MaterialButton(
-                      minWidth: double.infinity,
-                      height: 60,
-                      color: Colors.green[800],
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: AnimatedBuilder(
-                        animation: loading,
-                        builder: (context, _) {
-                          return loading.value 
-                              ? SizedBox(
-                                  width: 25,
-                                  height: 25,
-                                  child: CircularProgressIndicator(color: Colors.white,),
-                              )
-                              : const Text(
-                                "ENTRAR",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.white,
-                                  fontSize: 17
-                                ),
-                              );
+ @override
+ Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Login'),
+      ),
+      body: Container(
+        color: Colors.white,
+        child: Center(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                 children: <Widget>[
+                    TextFormField(
+                      decoration: InputDecoration(labelText: 'E-mail'),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Por favor, insira seu e-mail';
                         }
-                      ),
-                      onPressed: () => loading.value = !loading.value,
+                        return null;
+                      },
+                      onSaved: (value) {
+                        _email = value!;
+                      },
                     ),
-                  ),
-                  
-                  SizedBox(height: 10),
-                  
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Não tem uma conta?",
-                      style: TextStyle(
-                        color: Colors.white
-                      )),
-                      
-                      TextButton(
-                          onPressed: () {
-                            Navigator.push(context,
+                    TextFormField(
+                      decoration: InputDecoration(labelText: 'Senha'),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Por favor, insira sua senha';
+                        }
+                        return null;
+                      },
+                      onSaved: (value) {
+                        _password = value!;
+                      },
+                      obscureText: true,
+                    ),
+                    SizedBox(height: 12.0),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                                context,
                                 MaterialPageRoute(
                                     builder: (context) => SignUp()));
-                          },
-                          child: Text("Cadastre-se", style: TextStyle(color: Color.fromARGB(255, 5, 69, 247))))
-                    ],
-                  ),
-                ],
+                      },
+                      child: Text('Esqueceu sua senha?'),
+                    ),
+                    SizedBox(height: 24.0),
+                    ElevatedButton(
+                      onPressed: () async {
+                        if (_formKey.currentState!.validate()) {
+                          _formKey.currentState!.save();
+                          try {
+                            // Login logic here
+                          } catch (e) {
+                            print(e);
+                          }
+                        }
+                      },
+                      child: Text('Login'),
+                    ),
+                    
+                 ],
+                ),
               ),
             ),
           ),

@@ -1,176 +1,124 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, unused_field
 
-import 'package:boa_tarde/authentication/login.dart';
 import 'package:flutter/material.dart';
 
-class SignUp extends StatefulWidget {
-  const SignUp({super.key});
+void main() {
+  runApp(MyApp3());
+}
 
+class MyApp3 extends StatelessWidget {
   @override
-  State<SignUp> createState() => _SignUpState();
+  Widget build(BuildContext context) {
+      return MaterialApp(
+        title: 'Sign Up',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        debugShowCheckedModeBanner: false,
+        home: SignUp(),
+      );
+  }
+}
+
+class SignUp extends StatefulWidget {
+  @override
+  _SignUpState createState() => _SignUpState();
 }
 
 class _SignUpState extends State<SignUp> {
+  final _formKey = GlobalKey<FormState>();
+  String _cpf = '';
+  String _email = '';
+  String _password = '';
+  String _confirmPassword = '';
+  String _phone = '';
 
-  final email = TextEditingController();
-  final password = TextEditingController();
-  final confirmPassword = TextEditingController();
-  final loading = ValueNotifier<bool>(false);
-  final formKey = GlobalKey<FormState>();
-
-  bool isVisible = false;
-
-  @override
-  Widget build(BuildContext context) {
+ @override
+ Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(51, 51, 51, 1),
-      body: Center(
+      appBar: AppBar(
+        title: Text('Sign Up'),
+      ),
+      body: Form(
+        key: _formKey,
         child: SingleChildScrollView(
-          child: Form(
-            key: formKey,
-            child: Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ListTile(
-                    title: Text(
-                      "Registrar nova conta",
-                      style:
-                          TextStyle(
-                            color: Colors.white,
-                            fontSize: 40, 
-                            fontWeight: FontWeight.bold
-                          ),
-                    ),
-                  ),
-
-                  Container(
-                    margin: EdgeInsets.all(10),
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color.fromRGBO(239, 239, 239, 1)),
-                    child: TextFormField(
-                      controller: email,
-                      decoration: const InputDecoration(
-                        icon: Icon(Icons.person),
-                        border: InputBorder.none,
-                        hintText: "E-mail",
-                      ),
-                    ),
-                  ),
-
-                  Container(
-                    margin: EdgeInsets.all(10),
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color.fromRGBO(239, 239, 239, 1)),
-                    child: TextFormField(
-                      controller: password,
-                      obscureText: !isVisible,
-                      decoration: InputDecoration(
-                          icon: const Icon(Icons.lock),
-                          border: InputBorder.none,
-                          hintText: "Senha",
-                          suffixIcon: IconButton(
-                              onPressed: () {
-                                //In here we will create a click to show and hide the password a toggle button
-                                setState(() {
-                                  //toggle button
-                                  isVisible = !isVisible;
-                                });
-                              },
-                              icon: Icon(isVisible
-                                  ? Icons.visibility
-                                  : Icons.visibility_off))),
-                    ),
-                  ),
-
-                  Container(
-                    margin: EdgeInsets.all(10),
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color.fromRGBO(239, 239, 239, 1)),
-                    child: TextFormField(
-                      controller: confirmPassword,
-                      obscureText: !isVisible,
-                      decoration: InputDecoration(
-                          icon: const Icon(Icons.lock),
-                          border: InputBorder.none,
-                          hintText: "Senha Confirmar",
-                          suffixIcon: IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  isVisible = !isVisible;
-                                });
-                              },
-                              icon: Icon(isVisible
-                                  ? Icons.visibility
-                                  : Icons.visibility_off))),
-                    ),
-                  ),
-
-                  SizedBox(height: 10),
-                  
-                  Container(
-                    height: 60,
-                    width: MediaQuery.of(context).size.width - 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: MaterialButton(
-                      minWidth: double.infinity,
-                      height: 60,
-                      color: Color.fromARGB(255, 8, 53, 176),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: AnimatedBuilder(
-                        animation: loading,
-                        builder: (context, _) {
-                          return loading.value 
-                              ? SizedBox(
-                                  width: 25,
-                                  height: 25,
-                                  child: CircularProgressIndicator(color: Colors.white,),
-                              )
-                              : const Text(
-                                "INSCREVER-SE",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.white,
-                                  fontSize: 17
-                                ),
-                              );
-                        }
-                      ),
-                      onPressed: () => loading.value = !loading.value,
-                    ),
-                  ),
-
-                  SizedBox(height: 10),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Já tem uma conta?", style: TextStyle(color: Colors.white),),
-                      TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const LoginScreen()));
-                          },
-                          child: Text("Login", style: TextStyle(color: Color.fromARGB(255, 0, 156, 3)))
-                      )
-                    ],
-                  )
-                ],
+          padding: EdgeInsets.all(16),
+          child: Column(
+            children: <Widget>[
+              TextFormField(
+                decoration: InputDecoration(labelText: 'CPF'),
+                onChanged: (value) {
+                 _cpf = value;
+                },
+                validator: (value) {
+                  if (value!.isEmpty) {
+                      return 'Por favor insira seu CPF';
+                  }
+                  return null;
+                },
               ),
-            ),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'Email'),
+                onChanged: (value) {
+                 _email = value;
+                },
+                validator: (value) {
+                  if (value!.isEmpty) {
+                      return 'Por favor insira seu e-mail';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'Password'),
+                onChanged: (value) {
+                 _password = value;
+                },
+                validator: (value) {
+                 if (value!.isEmpty) {
+                    return 'Por favor insira sua senha';
+                 }
+                 return null;
+                },
+              ),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'Confirm Password'),
+                onChanged: (value) {
+                 _confirmPassword = value;
+                },
+                validator: (value) {
+                  if (value!.isEmpty) {
+                      return 'Por favor confirme sua senha';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'Phone'),
+                onChanged: (value) {
+                 _phone = value;
+                },
+                validator: (value) {
+                  if (value!.isEmpty) {
+                      return 'Por favor, digite seu número de telefone';
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('Registrado com sucesso!'),
+                      ),
+                    );
+                  }
+                },
+                child: Text('Registre-se'),
+              ),
+            ],
           ),
         ),
       ),
