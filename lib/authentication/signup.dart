@@ -31,7 +31,6 @@ class _SignUpState extends State<SignUp> {
   String _email = '';
   String _password = '';
   String _confirmPassword = '';
-  String _phone = '';
 
  @override
  Widget build(BuildContext context) {
@@ -89,18 +88,6 @@ class _SignUpState extends State<SignUp> {
                 validator: (value) {
                   if (value!.isEmpty) {
                       return 'Por favor confirme sua senha';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                decoration: InputDecoration(labelText: 'Phone'),
-                onChanged: (value) {
-                 _phone = value;
-                },
-                validator: (value) {
-                  if (value!.isEmpty) {
-                      return 'Por favor, digite seu número de telefone';
                   }
                   return null;
                 },
