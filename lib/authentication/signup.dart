@@ -27,7 +27,7 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   final _formKey = GlobalKey<FormState>();
-  String _cpf = '';
+  String _nome = '';
   String _email = '';
   String _password = '';
   String _confirmPassword = '';
@@ -45,19 +45,19 @@ class _SignUpState extends State<SignUp> {
           child: Column(
             children: <Widget>[
               TextFormField(
-                decoration: InputDecoration(labelText: 'CPF'),
+                decoration: InputDecoration(labelText: 'Nome'),
                 onChanged: (value) {
-                 _cpf = value;
+                 _nome = value;
                 },
                 validator: (value) {
                   if (value!.isEmpty) {
-                      return 'Por favor insira seu CPF';
+                      return 'Por favor insira seu nome';
                   }
                   return null;
                 },
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Email'),
+                decoration: InputDecoration(labelText: 'E-mail'),
                 onChanged: (value) {
                  _email = value;
                 },
@@ -69,7 +69,7 @@ class _SignUpState extends State<SignUp> {
                 },
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Password'),
+                decoration: InputDecoration(labelText: 'Senha'),
                 onChanged: (value) {
                  _password = value;
                 },
@@ -81,7 +81,7 @@ class _SignUpState extends State<SignUp> {
                 },
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Confirm Password'),
+                decoration: InputDecoration(labelText: 'Confirme Senha'),
                 onChanged: (value) {
                  _confirmPassword = value;
                 },
