@@ -2,7 +2,8 @@
 
 import 'package:boa_tarde/loading/splash.dart';
 import 'package:boa_tarde/model/modal.dart';
-import 'package:boa_tarde/story-bar/story.dart';
+import 'package:boa_tarde/stories/story.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -57,16 +58,23 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 50,
         backgroundColor: Color.fromRGBO(0, 0, 0, 1),
-        flexibleSpace: Image.asset("assets/icons/tema.png", fit: BoxFit.contain),
+        centerTitle: true,
+        title: Center(
+          child: Text("Adopt Pet",
+            style: GoogleFonts.calistoga(
+              color: Color.fromARGB(255, 255, 98, 0),
+              fontSize: 33
+            )
+          ),
+        ),
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(50),
           child: StoryBar(),
         ),
       ),
 
-      backgroundColor: Color.fromRGBO(43, 43, 43, 1),
+      backgroundColor: Color.fromARGB(255, 0, 0, 0),
 
       body: GridView.builder(
         itemCount: _images.length,
@@ -97,21 +105,21 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Pesquisa',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add_circle_outline),
+            icon: Icon(Icons.add_circle),
             label: 'Adicionar',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_border),
+            icon: Icon(Icons.favorite),
             label: 'Favoritos',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: 'Perfil',
+            icon: Icon(Icons.person),
+            label: 'Minha Conta',
           ),
         ],
         currentIndex: 0,
-        selectedItemColor: Color.fromARGB(255, 255, 255, 255),
-        unselectedItemColor: Color.fromARGB(255, 128, 128, 128),
+        selectedItemColor: Color.fromARGB(255, 255, 98, 0),
+        unselectedItemColor: Color.fromARGB(255, 151, 151, 151),
       ),
     );
   }
