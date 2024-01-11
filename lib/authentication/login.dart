@@ -51,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
                       decoration: InputDecoration(labelText: 'E-mail'),
                       validator: (value) {
                         if (value!.isEmpty) {
-                          return 'Por favor, insira seu e-mail';
+                          return 'Por favor, digite seu e-mail';
                         }
                         return null;
                       },
@@ -63,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                       decoration: InputDecoration(labelText: 'Senha'),
                       validator: (value) {
                         if (value!.isEmpty) {
-                          return 'Por favor, insira sua senha';
+                          return 'Por favor, digite sua senha';
                         }
                         return null;
                       },
