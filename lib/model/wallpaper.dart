@@ -1,0 +1,9 @@
+// ignore_for_file: unused_import
+
+import 'package:flutter/material.dart';
+
+class Wallpaper {
+  final String image;
+
+  Wallpaper({required this.image});
+}

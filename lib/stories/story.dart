@@ -1,37 +1,37 @@
 // ignore_for_file: use_key_in_widget_constructors, sized_box_for_whitespace, prefer_const_constructors, sort_child_properties_last
 
-import 'package:boa_tarde/model/modal.dart';
+import 'package:boa_tarde/model/icon.dart';
 import 'package:icofont_flutter/icofont_flutter.dart';
 import 'package:flutter/material.dart';
 
 class StoryBar extends StatelessWidget {
-  final List<Pet> _pets = [
-    Pet(icon: IcoFontIcons.dog),
-    Pet(icon: IcoFontIcons.pandaFace),
-    Pet(icon: IcoFontIcons.catAlt3),
-    Pet(icon: IcoFontIcons.butterflyAlt),
-    Pet(icon: IcoFontIcons.tiger),
-    Pet(icon: IcoFontIcons.bat),
-    Pet(icon: IcoFontIcons.bear),
-    Pet(icon: IcoFontIcons.bird),
-    Pet(icon: IcoFontIcons.penguin),
-    Pet(icon: IcoFontIcons.camel),
-    Pet(icon: IcoFontIcons.crab),
-    Pet(icon: IcoFontIcons.dolphin),
-    Pet(icon: IcoFontIcons.duckTracks),
-    Pet(icon: IcoFontIcons.fish5),
-    Pet(icon: IcoFontIcons.gorilla),
-    Pet(icon: IcoFontIcons.monkeyFace),
-    Pet(icon: IcoFontIcons.octopusAlt),
-    Pet(icon: IcoFontIcons.paw),
-    Pet(icon: IcoFontIcons.froggy),
-    Pet(icon: IcoFontIcons.woodpecker),
-    Pet(icon: IcoFontIcons.pandaFace),
-    Pet(icon: IcoFontIcons.frog),
-    Pet(icon: IcoFontIcons.pigeon),
-    Pet(icon: IcoFontIcons.lemur),
-    Pet(icon: IcoFontIcons.shrimpAlt),
-    Pet(icon: IcoFontIcons.squirrel),
+  final List<IconPet> _pets = [
+    IconPet(icon: IcoFontIcons.dog),
+    IconPet(icon: IcoFontIcons.pandaFace),
+    IconPet(icon: IcoFontIcons.catAlt3),
+    IconPet(icon: IcoFontIcons.butterflyAlt),
+    IconPet(icon: IcoFontIcons.tiger),
+    IconPet(icon: IcoFontIcons.bat),
+    IconPet(icon: IcoFontIcons.bear),
+    IconPet(icon: IcoFontIcons.bird),
+    IconPet(icon: IcoFontIcons.penguin),
+    IconPet(icon: IcoFontIcons.camel),
+    IconPet(icon: IcoFontIcons.crab),
+    IconPet(icon: IcoFontIcons.dolphin),
+    IconPet(icon: IcoFontIcons.duckTracks),
+    IconPet(icon: IcoFontIcons.fish5),
+    IconPet(icon: IcoFontIcons.gorilla),
+    IconPet(icon: IcoFontIcons.monkeyFace),
+    IconPet(icon: IcoFontIcons.octopusAlt),
+    IconPet(icon: IcoFontIcons.paw),
+    IconPet(icon: IcoFontIcons.froggy),
+    IconPet(icon: IcoFontIcons.woodpecker),
+    IconPet(icon: IcoFontIcons.pandaFace),
+    IconPet(icon: IcoFontIcons.frog),
+    IconPet(icon: IcoFontIcons.pigeon),
+    IconPet(icon: IcoFontIcons.lemur),
+    IconPet(icon: IcoFontIcons.shrimpAlt),
+    IconPet(icon: IcoFontIcons.squirrel),
   ];
 
   @override
