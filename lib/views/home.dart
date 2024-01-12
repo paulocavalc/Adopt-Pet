@@ -28,6 +28,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  
   final List _images = [
     Data(image: "assets/images/pet0.jpg"),
     Data(image: "assets/images/pet1.jpg"),
