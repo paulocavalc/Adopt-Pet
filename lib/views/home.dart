@@ -1,5 +1,6 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_constructors_in_immutables
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_constructors_in_immutables, unused_field, unused_element
 
+import 'package:boa_tarde/authentication/login.dart';
 import 'package:boa_tarde/loading/splash.dart';
 import 'package:boa_tarde/model/modal.dart';
 import 'package:boa_tarde/stories/story.dart';
@@ -7,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeApp extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -50,7 +50,33 @@ class _MyHomePageState extends State<MyHomePage> {
     Data(image: "assets/images/pet18.jpg"),
     Data(image: "assets/images/pet19.jpg"),
   ];
-  
+
+  int _index = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {_index = index;});
+    switch (index) {
+      case 0:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => HomeApp()),
+        );
+        break;
+      case 1:
+        break;
+      case 2:
+        break;
+      case 3:
+        break;
+      case 4:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => LoginPet()),
+        );
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,11 +85,8 @@ class _MyHomePageState extends State<MyHomePage> {
         centerTitle: true,
         title: Center(
           child: Text("Adopt Pet",
-            style: GoogleFonts.calistoga(
-              color: Color.fromARGB(255, 255, 98, 0),
-              fontSize: 33
-            )
-          ),
+              style: GoogleFonts.calistoga(
+                  color: Color.fromARGB(255, 255, 98, 0), fontSize: 33)),
         ),
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(50),
@@ -114,7 +137,8 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Minha Conta',
           ),
         ],
-        currentIndex: 0,
+        currentIndex: _index,
+        onTap: _onItemTapped,
         selectedItemColor: Color.fromARGB(255, 255, 98, 0),
         unselectedItemColor: Color.fromARGB(255, 151, 151, 151),
       ),

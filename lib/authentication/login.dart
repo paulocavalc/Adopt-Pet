@@ -1,48 +1,37 @@
-// ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_constructors, prefer_void_to_null, non_constant_identifier_names, unused_field, avoid_print
+// ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_constructors, prefer_void_to_null, non_constant_identifier_names, unused_field, avoid_print, sort_child_properties_last, deprecated_member_use, must_be_immutable
 
 import 'package:boa_tarde/authentication/signup.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-void main() {
-  runApp(MyAppLogin());
-}
+class LoginPet extends StatelessWidget {
 
-class MyAppLogin extends StatelessWidget {
- @override
- Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Login',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: LoginPage(),
-    );
- }
-}
+  final _formKey = GlobalKey<FormState>();
+  String _email = '';
+  String _password = '';
 
-class LoginPage extends StatefulWidget {
- @override
- _LoginPageState createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
- final _formKey = GlobalKey<FormState>();
- String _email = '';
- String _password = '';
-
- @override
- Widget build(BuildContext context) {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        backgroundColor: Color.fromRGBO(0, 0, 0, 1),
+        centerTitle: true,
+        title: Center(
+          child: Text("Adopt Pet",
+            style: GoogleFonts.calistoga(
+              color: Color.fromARGB(255, 255, 98, 0),
+              fontSize: 33
+            )
+          ),
+        ),
       ),
+      
       body: Container(
-        color: Colors.white,
+        color: Color.fromARGB(255, 151, 151, 151),
         child: Center(
           child: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(8.0),
               child: Form(
                 key: _formKey,
                 child: Column(
@@ -72,17 +61,13 @@ class _LoginPageState extends State<LoginPage> {
                       },
                       obscureText: true,
                     ),
-                    SizedBox(height: 12.0),
+                    SizedBox(height: 12),
                     TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SignUp()));
-                      },
-                      child: Text('Esqueceu sua senha?'),
+                      onPressed: () {},
+                      child: Text('Esqueceu sua senha?', style: TextStyle(color: Colors.black)),
                     ),
-                    SizedBox(height: 24.0),
+                    SizedBox(height: 24),
+                    
                     ElevatedButton(
                       onPressed: () async {
                         if (_formKey.currentState!.validate()) {
@@ -94,7 +79,33 @@ class _LoginPageState extends State<LoginPage> {
                           }
                         }
                       },
-                      child: Text('Login'),
+                      child: Text('Login', style: TextStyle(fontSize: 18)),
+                      style: ElevatedButton.styleFrom(
+                        primary: Color.fromARGB(255, 255, 98, 0),
+                        onPrimary: Colors.black,
+                        padding: EdgeInsets.all(20),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 12),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignUpPet()));
+                      },
+                      child: Text('Registre-se', style: TextStyle(fontSize: 18)),
+                      style: ElevatedButton.styleFrom(
+                        primary: Color.fromARGB(255, 255, 98, 0),
+                        onPrimary: Colors.black,
+                        padding: EdgeInsets.all(20),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
                     ),
                   ],
                 ),

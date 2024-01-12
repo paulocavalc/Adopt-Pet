@@ -1,31 +1,10 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, unused_field
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, unused_field, sort_child_properties_last, deprecated_member_use, must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-void main() {
-  runApp(MyApp3());
-}
-
-class MyApp3 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-      return MaterialApp(
-        title: 'Sign Up',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        debugShowCheckedModeBanner: false,
-        home: SignUp(),
-      );
-  }
-}
-
-class SignUp extends StatefulWidget {
-  @override
-  _SignUpState createState() => _SignUpState();
-}
-
-class _SignUpState extends State<SignUp> {
+class SignUpPet extends StatelessWidget {
+  
   final _formKey = GlobalKey<FormState>();
   String _nome = '';
   String _email = '';
@@ -36,12 +15,22 @@ class _SignUpState extends State<SignUp> {
  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign Up'),
+        backgroundColor: Color.fromRGBO(0, 0, 0, 1),
+        centerTitle: true,
+        title: Center(
+          child: Text("Registre-se",
+            style: GoogleFonts.calistoga(
+              color: Color.fromARGB(255, 255, 98, 0),
+              fontSize: 33
+            )
+          ),
+        ),
       ),
+      backgroundColor: Color.fromARGB(255, 151, 151, 151),
       body: Form(
         key: _formKey,
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(16),
+          padding: EdgeInsets.all(8.0),
           child: Column(
             children: <Widget>[
               TextFormField(
@@ -92,18 +81,26 @@ class _SignUpState extends State<SignUp> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              SizedBox(height: 24),
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                        content: Text('Registrado com sucesso!'),
+                        content: Text('Registrado com sucesso!', style: TextStyle(backgroundColor: Color.fromARGB(255, 0, 132, 20))),
                       ),
                     );
                   }
                 },
-                child: Text('Registre-se'),
+                child: Text('Enviar', style: TextStyle(fontSize: 18)),
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromARGB(255, 255, 98, 0),
+                  onPrimary: Colors.black,
+                  padding: EdgeInsets.all(20),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
               ),
             ],
           ),
