@@ -28,7 +28,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  
   final List _images = [
     Wallpaper(image: "assets/images/pet0.jpg"),
     Wallpaper(image: "assets/images/pet1.jpg"),
@@ -55,7 +54,9 @@ class _MyHomePageState extends State<MyHomePage> {
   int _index = 0;
 
   void _onItemTapped(int index) {
-    setState(() {_index = index;});
+    setState(() {
+      _index = index;
+    });
     switch (index) {
       case 0:
         Navigator.push(
@@ -94,9 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: StoryBar(),
         ),
       ),
-
       backgroundColor: Color.fromARGB(255, 0, 0, 0),
-
       body: GridView.builder(
         itemCount: _images.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -112,7 +111,6 @@ class _MyHomePageState extends State<MyHomePage> {
           );
         },
       ),
-
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         type: BottomNavigationBarType.fixed,

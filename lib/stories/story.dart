@@ -48,6 +48,7 @@ class StoryBar extends StatelessWidget {
             child: CircleAvatar(
               backgroundColor: Color.fromARGB(255, 151, 151, 151),
               child: Icon(
+                
                 _pets[index].icon,
                 color: const Color.fromARGB(255, 0, 0, 0),
                 size: 35,
