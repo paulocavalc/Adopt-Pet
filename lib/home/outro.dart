@@ -1,24 +1,18 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_constructors_in_immutables, unused_field, unused_element, prefer_const_literals_to_create_immutables
 
 import 'package:boa_tarde/authentication/login.dart';
-import 'package:boa_tarde/wallpapers/bear.dart';
 import 'package:boa_tarde/wallpapers/cat.dart';
-import 'package:boa_tarde/wallpapers/cow.dart';
 import 'package:boa_tarde/wallpapers/dog.dart';
 import 'package:boa_tarde/loading/splash.dart';
 import 'package:boa_tarde/wallpapers/dove.dart';
 import 'package:boa_tarde/wallpapers/duck.dart';
-import 'package:boa_tarde/wallpapers/elephant.dart';
 import 'package:boa_tarde/wallpapers/fish.dart';
 import 'package:boa_tarde/wallpapers/giraffe.dart';
 import 'package:boa_tarde/wallpapers/hen.dart';
 import 'package:boa_tarde/wallpapers/horse.dart';
-import 'package:boa_tarde/wallpapers/monkey.dart';
 import 'package:boa_tarde/wallpapers/ounce.dart';
 import 'package:boa_tarde/wallpapers/penguin.dart';
-import 'package:boa_tarde/wallpapers/shark.dart';
 import 'package:boa_tarde/wallpapers/squirrel.dart';
-import 'package:boa_tarde/wallpapers/tiger.dart';
 import 'package:boa_tarde/wallpapers/toucan.dart';
 import 'package:boa_tarde/wallpapers/turtle.dart';
 import 'package:boa_tarde/wallpapers/wolf.dart';
@@ -116,28 +110,13 @@ class _MyHomeOutroPageState extends State<MyHomeOutroPage> {
                 text: 'Pato',
               ),
               Tab(
-                text: 'Urso',
-              ),
-              Tab(
                 text: 'Cavalo',
               ),
               Tab(
                 text: 'Pomba',
               ),
               Tab(
-                text: 'Macaco',
-              ),
-              Tab(
-                text: 'Vaca',
-              ),
-              Tab(
-                text: 'Elefante',
-              ),
-              Tab(
                 text: 'Lobo',
-              ),
-              Tab(
-                text: 'Tubarão',
               ),
               Tab(
                 text: 'Tartaruga',
@@ -150,9 +129,6 @@ class _MyHomeOutroPageState extends State<MyHomeOutroPage> {
               ),
               Tab(
                 text: 'Onça',
-              ),
-              Tab(
-                text: 'Tigre',
               ),
               Tab(
                 text: 'Tucano',
@@ -168,19 +144,13 @@ class _MyHomeOutroPageState extends State<MyHomeOutroPage> {
             Tela_Peixe(),
             Tela_Esquilo(),
             Tela_Pato(),
-            Tela_Urso(),
             Tela_Cavalo(),
             Tela_Pomba(),
-            Tela_Macaco(),
-            Tela_Vaca(),
-            Tela_Elefante(),
             Tela_Lobo(),
-            Tela_Tubarao(),
             Tela_Tartaruga(),
             Tela_Pinguim(),
             Tela_Girafa(),
             Tela_Onca(),
-            Tela_Tigre(),
             Tela_Tucano(),
           ],
         ),
@@ -206,7 +176,7 @@ class _MyHomeOutroPageState extends State<MyHomeOutroPage> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
-              label: 'Minha Conta',
+              label: 'Perfil',
             ),
           ],
           currentIndex: _index,
