@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 20,
+      length: 11,
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Color.fromRGBO(0, 0, 0, 1),
