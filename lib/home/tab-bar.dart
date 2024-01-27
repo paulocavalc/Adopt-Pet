@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_constructors_in_immutables, unused_field, unused_element, prefer_const_literals_to_create_immutables
 
-import 'package:boa_tarde/home/grid-view.dart';
+import 'package:boa_tarde/wallpapers/dog.dart';
 import 'package:flutter/material.dart';
 
 class TabBarApp extends StatelessWidget {
@@ -33,10 +33,7 @@ class TabBarApp extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            Image_Screen(),
-            Image_Screen(),
-            Image_Screen(),
-            Image_Screen(),
+            
           ],
         ),
       ), 

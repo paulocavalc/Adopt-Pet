@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, unnecessary_new, sized_box_for_whitespace, sort_child_properties_last
 import 'dart:async';
 import 'package:boa_tarde/home/home.dart';
+import 'package:boa_tarde/home/outro.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class StartState extends State<SplashScreen> {
 
   route() {
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => MyHomePage(title: 'Adopt Pet')));
+        context, MaterialPageRoute(builder: (context) => MyHomeOutroPage(title: 'Adopt Pet')));
   }
 
   @override
