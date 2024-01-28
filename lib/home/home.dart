@@ -82,39 +82,50 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           bottom: TabBar(
             isScrollable: true,
+            indicatorPadding: EdgeInsets.all(5),
+            labelColor: const Color.fromARGB(255, 0, 0, 0),
+            unselectedLabelColor: const Color.fromARGB(255, 151, 151, 151),
+            labelStyle: TextStyle(fontSize: 14),
+            labelPadding: EdgeInsets.only(
+              left: 30, right: 30, top: 0.8, bottom: 0.8
+            ),
+            indicator: BoxDecoration(
+              color: Color.fromARGB(255, 255, 98, 0),
+              borderRadius: BorderRadius.circular(5)
+            ),
             tabs: [
               Tab(
-                text: 'Cachorro',
+                text: 'CACHORRO',
               ),
               Tab(
-                text: 'Cavalo',
+                text: 'CAVALO',
               ),
               Tab(
-                text: 'Esquilo',
+                text: 'ESQUILO',
               ),
               Tab(
-                text: 'Galinha',
+                text: 'GALINHA',
               ),
               Tab(
-                text: 'Gato',
+                text: 'GATO',
               ),
               Tab(
-                text: 'Girafa',
+                text: 'GIRAFA',
               ),
               Tab(
-                text: 'Pato',
+                text: 'PATO',
               ),
               Tab(
-                text: 'Peixe',
+                text: 'PEIXE',
               ),
               Tab(
-                text: 'Pinguim',
+                text: 'PINGUIM',
               ),
               Tab(
-                text: 'Pomba',
+                text: 'POMBA',
               ),
               Tab(
-                text: 'Tartaruga',
+                text: 'TARTARUGA',
               ),
             ],
           ),
