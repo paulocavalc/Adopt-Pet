@@ -83,15 +83,15 @@ class _MyHomePageState extends State<MyHomePage> {
           bottom: TabBar(
             isScrollable: true,
             indicatorPadding: EdgeInsets.all(5),
-            labelColor: const Color.fromARGB(255, 0, 0, 0),
+            labelColor: const Color.fromARGB(255, 255, 98, 0),
             unselectedLabelColor: const Color.fromARGB(255, 151, 151, 151),
             labelStyle: TextStyle(fontSize: 14),
             labelPadding: EdgeInsets.only(
               left: 30, right: 30, top: 0.8, bottom: 0.8
             ),
             indicator: BoxDecoration(
-              color: Color.fromARGB(255, 255, 98, 0),
-              borderRadius: BorderRadius.circular(5)
+              border: Border.all(color: Color.fromARGB(255, 255, 98, 0)),
+              borderRadius: BorderRadius.circular(70)
             ),
             tabs: [
               Tab(
