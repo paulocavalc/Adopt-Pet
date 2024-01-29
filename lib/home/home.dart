@@ -87,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
             unselectedLabelColor: const Color.fromARGB(255, 151, 151, 151),
             labelStyle: TextStyle(fontSize: 14),
             labelPadding: EdgeInsets.only(
-              left: 30, right: 30, top: 0.8, bottom: 0.8
+              left: 30, right: 30, top: 0.5, bottom: 0.5
             ),
             indicator: BoxDecoration(
               border: Border.all(color: Color.fromARGB(255, 255, 98, 0)),
