@@ -40,7 +40,7 @@ class StartState extends State<LoadingScreen> {
           children: [
             Center(
               child: Container(
-                child: Image.asset("assets/icons/logo.png"),
+                child: Image.asset("assets/icons/logo-pet.png"),
                 width: 150,
               ),
             ),
