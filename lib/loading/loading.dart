@@ -25,8 +25,8 @@ class StartState extends State<LoadingScreen> {
   }
 
   route() {
-    Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => MyHomePage(title: 'Adopt Pet')));
+    Navigator.pushReplacement(context, 
+        MaterialPageRoute(builder: (context) => MyHomePage(title: 'Adopt Pet')));
   }
 
   @override
@@ -41,7 +41,7 @@ class StartState extends State<LoadingScreen> {
             Center(
               child: Container(
                 child: Image.asset("assets/icons/logo-pet.png"),
-                width: 180,
+                width: 200,
               ),
             ),
           ],

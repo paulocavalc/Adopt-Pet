@@ -46,10 +46,8 @@ class _MyHomePageState extends State<MyHomePage> {
     });
     switch (index) {
       case 0:
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => HomeApp()),
-        );
+        Navigator.pushReplacement(context, 
+              MaterialPageRoute(builder: (context) => MyHomePage(title: 'Adopt Pet')));
         break;
       case 1:
         
@@ -83,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
             unselectedLabelColor: const Color.fromARGB(255, 151, 151, 151),
             labelStyle: TextStyle(fontSize: 14),
             labelPadding: EdgeInsets.only(
-              left: 30, right: 30, top: 0.5, bottom: 0.5
+              left: 30, right: 30, top: 0, bottom: 0
             ),
             indicator: BoxDecoration(
               border: Border.all(color: Color.fromARGB(255, 255, 148, 66)),
