@@ -74,19 +74,19 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Center(
             child: Text("Adopt Pet",
                 style: GoogleFonts.calistoga(
-                    color: Color.fromARGB(255, 223, 179, 118), fontSize: 38)),
+                    color: Color.fromARGB(255, 255, 148, 66), fontSize: 38)),
           ),
           bottom: TabBar(
             isScrollable: true,
             indicatorPadding: EdgeInsets.all(5),
-            labelColor: const Color.fromARGB(255, 223, 179, 118),
+            labelColor: const Color.fromARGB(255, 255, 148, 66),
             unselectedLabelColor: const Color.fromARGB(255, 151, 151, 151),
             labelStyle: TextStyle(fontSize: 14),
             labelPadding: EdgeInsets.only(
               left: 30, right: 30, top: 0.5, bottom: 0.5
             ),
             indicator: BoxDecoration(
-              border: Border.all(color: Color.fromARGB(255, 223, 179, 118)),
+              border: Border.all(color: Color.fromARGB(255, 255, 148, 66)),
               borderRadius: BorderRadius.circular(5)
             ),
             tabs: [
@@ -156,7 +156,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
           currentIndex: _index,
           onTap: _onItemTapped,
-          selectedItemColor: Color.fromARGB(255, 223, 179, 118),
+          selectedItemColor: Color.fromARGB(255, 255, 148, 66),
           unselectedItemColor: Color.fromARGB(255, 151, 151, 151),
         ),
       ),
