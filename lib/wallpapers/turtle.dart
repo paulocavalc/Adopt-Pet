@@ -1,6 +1,6 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors
 
-import 'package:boa_tarde/model/wallpaper.dart';
+import 'package:boa_tarde/model/turtle-model.dart';
 import 'package:flutter/material.dart';
 
 class Tela_Tartaruga extends StatefulWidget {
@@ -12,20 +12,6 @@ class Tela_Tartaruga extends StatefulWidget {
 
 class _Tela_TartarugaState extends State<Tela_Tartaruga>
     with AutomaticKeepAliveClientMixin {
-  final List _images = [
-    Wallpaper(image: "assets/images/tartaruga1.jpg"),
-    Wallpaper(image: "assets/images/tartaruga2.jpg"),
-    Wallpaper(image: "assets/images/tartaruga3.jpg"),
-    Wallpaper(image: "assets/images/tartaruga4.jpg"),
-    Wallpaper(image: "assets/images/tartaruga5.jpg"),
-    Wallpaper(image: "assets/images/tartaruga6.jpg"),
-    Wallpaper(image: "assets/images/tartaruga7.jpg"),
-    Wallpaper(image: "assets/images/tartaruga8.jpg"),
-    Wallpaper(image: "assets/images/tartaruga9.jpg"),
-    Wallpaper(image: "assets/images/tartaruga10.jpg"),
-    Wallpaper(image: "assets/images/tartaruga11.jpg"),
-    Wallpaper(image: "assets/images/tartaruga12.jpg"),
-  ];
   
   @override
   bool get wantKeepAlive => true;
@@ -35,7 +21,7 @@ class _Tela_TartarugaState extends State<Tela_Tartaruga>
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 0, 0, 0),
       body: GridView.builder(
-        itemCount: _images.length,
+        itemCount: turtle.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 1,
@@ -44,7 +30,7 @@ class _Tela_TartarugaState extends State<Tela_Tartaruga>
         ),
         itemBuilder: (BuildContext context, int index) {
           return Image.network(
-            _images[index].image,
+            turtle[index].turtle,
             fit: BoxFit.cover,
           );
         },

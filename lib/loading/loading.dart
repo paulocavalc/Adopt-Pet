@@ -41,7 +41,7 @@ class StartState extends State<LoadingScreen> {
             Center(
               child: Container(
                 child: Image.asset("assets/icons/logo-pet.png"),
-                width: 150,
+                width: 180,
               ),
             ),
           ],

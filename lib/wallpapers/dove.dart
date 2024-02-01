@@ -1,6 +1,6 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors
 
-import 'package:boa_tarde/model/wallpaper.dart';
+import 'package:boa_tarde/model/dove-model.dart';
 import 'package:flutter/material.dart';
 
 class Tela_Pomba extends StatefulWidget {
@@ -12,20 +12,6 @@ class Tela_Pomba extends StatefulWidget {
 
 class _Tela_PombaState extends State<Tela_Pomba>
     with AutomaticKeepAliveClientMixin {
-  final List _images = [
-    Wallpaper(image: "assets/images/pomba1.jpg"),
-    Wallpaper(image: "assets/images/pomba2.jpg"),
-    Wallpaper(image: "assets/images/pomba3.jpg"),
-    Wallpaper(image: "assets/images/pomba4.jpg"),
-    Wallpaper(image: "assets/images/pomba5.jpg"),
-    Wallpaper(image: "assets/images/pomba6.jpg"),
-    Wallpaper(image: "assets/images/pomba7.jpg"),
-    Wallpaper(image: "assets/images/pomba8.jpg"),
-    Wallpaper(image: "assets/images/pomba9.jpg"),
-    Wallpaper(image: "assets/images/pomba10.jpg"),
-    Wallpaper(image: "assets/images/pomba11.jpg"),
-    Wallpaper(image: "assets/images/pomba12.jpg"),
-  ];
   
   @override
   bool get wantKeepAlive => true;
@@ -35,7 +21,7 @@ class _Tela_PombaState extends State<Tela_Pomba>
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 0, 0, 0),
       body: GridView.builder(
-        itemCount: _images.length,
+        itemCount: dove.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 1,
@@ -44,7 +30,7 @@ class _Tela_PombaState extends State<Tela_Pomba>
         ),
         itemBuilder: (BuildContext context, int index) {
           return Image.network(
-            _images[index].image,
+            dove[index].dove,
             fit: BoxFit.cover,
           );
         },

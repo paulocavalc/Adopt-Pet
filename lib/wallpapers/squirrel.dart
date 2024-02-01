@@ -1,6 +1,6 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors
 
-import 'package:boa_tarde/model/wallpaper.dart';
+import 'package:boa_tarde/model/squirrel-model.dart';
 import 'package:flutter/material.dart';
 
 class Tela_Esquilo extends StatefulWidget {
@@ -12,20 +12,6 @@ class Tela_Esquilo extends StatefulWidget {
 
 class _Tela_EsquiloState extends State<Tela_Esquilo>
     with AutomaticKeepAliveClientMixin {
-  final List _images = [
-    Wallpaper(image: "assets/images/esquilo1.jpg"),
-    Wallpaper(image: "assets/images/esquilo2.jpg"),
-    Wallpaper(image: "assets/images/esquilo3.jpg"),
-    Wallpaper(image: "assets/images/esquilo4.jpg"),
-    Wallpaper(image: "assets/images/esquilo5.jpg"),
-    Wallpaper(image: "assets/images/esquilo6.jpg"),
-    Wallpaper(image: "assets/images/esquilo7.jpg"),
-    Wallpaper(image: "assets/images/esquilo8.jpg"),
-    Wallpaper(image: "assets/images/esquilo9.jpg"),
-    Wallpaper(image: "assets/images/esquilo10.jpg"),
-    Wallpaper(image: "assets/images/esquilo11.jpg"),
-    Wallpaper(image: "assets/images/esquilo12.jpg"),
-  ];
   
   @override
   bool get wantKeepAlive => true;
@@ -35,7 +21,7 @@ class _Tela_EsquiloState extends State<Tela_Esquilo>
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 0, 0, 0),
       body: GridView.builder(
-        itemCount: _images.length,
+        itemCount: squirrel.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 1,
@@ -44,7 +30,7 @@ class _Tela_EsquiloState extends State<Tela_Esquilo>
         ),
         itemBuilder: (BuildContext context, int index) {
           return Image.network(
-            _images[index].image,
+            squirrel[index].squirrel,
             fit: BoxFit.cover,
           );
         },

@@ -7,7 +7,6 @@ import 'package:boa_tarde/loading/loading.dart';
 import 'package:boa_tarde/wallpapers/dove.dart';
 import 'package:boa_tarde/wallpapers/duck.dart';
 import 'package:boa_tarde/wallpapers/fish.dart';
-import 'package:boa_tarde/wallpapers/giraffe.dart';
 import 'package:boa_tarde/wallpapers/hen.dart';
 import 'package:boa_tarde/wallpapers/horse.dart';
 import 'package:boa_tarde/wallpapers/penguin.dart';
@@ -53,12 +52,9 @@ class _MyHomePageState extends State<MyHomePage> {
         );
         break;
       case 1:
+        
         break;
       case 2:
-        break;
-      case 3:
-        break;
-      case 4:
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => LoginPet()),
@@ -70,15 +66,15 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 11,
+      length: 10,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromRGBO(0, 0, 0, 1),
+          backgroundColor: Color.fromARGB(255, 0, 0, 0),
           centerTitle: true,
           title: Center(
             child: Text("Adopt Pet",
                 style: GoogleFonts.calistoga(
-                    color: Color.fromARGB(255, 223, 179, 118), fontSize: 33)),
+                    color: Color.fromARGB(255, 223, 179, 118), fontSize: 38)),
           ),
           bottom: TabBar(
             isScrollable: true,
@@ -110,9 +106,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 text: 'GATO',
               ),
               Tab(
-                text: 'GIRAFA',
-              ),
-              Tab(
                 text: 'PATO',
               ),
               Tab(
@@ -137,7 +130,6 @@ class _MyHomePageState extends State<MyHomePage> {
             Tela_Esquilo(),
             Tela_Galinha(),
             Tela_Gato(),
-            Tela_Girafa(),
             Tela_Pato(),
             Tela_Peixe(),
             Tela_Pinguim(),
@@ -154,16 +146,8 @@ class _MyHomePageState extends State<MyHomePage> {
               label: 'Início',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'Pesquisa',
-            ),
-            BottomNavigationBarItem(
               icon: Icon(Icons.add_circle),
               label: 'Adicionar',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite),
-              label: 'Favoritos',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),

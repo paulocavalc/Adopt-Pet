@@ -2,7 +2,6 @@
 
 import 'package:boa_tarde/authentication/login.dart';
 import 'package:boa_tarde/loading/loading.dart';
-import 'package:boa_tarde/model/wallpaper.dart';
 import 'package:boa_tarde/stories/story.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,28 +27,28 @@ class MyHomeSaudadePage extends StatefulWidget {
 }
 
 class _MyHomeSaudadePageState extends State<MyHomeSaudadePage> {
-  final List _images = [
-    Wallpaper(image: "assets/images/pet0.jpg"),
-    Wallpaper(image: "assets/images/pet1.jpg"),
-    Wallpaper(image: "assets/images/pet2.jpg"),
-    Wallpaper(image: "assets/images/pet3.jpg"),
-    Wallpaper(image: "assets/images/pet4.jpg"),
-    Wallpaper(image: "assets/images/pet5.jpg"),
-    Wallpaper(image: "assets/images/pet6.jpg"),
-    Wallpaper(image: "assets/images/pet7.jpg"),
-    Wallpaper(image: "assets/images/pet8.jpg"),
-    Wallpaper(image: "assets/images/pet9.jpg"),
-    Wallpaper(image: "assets/images/pet10.jpg"),
-    Wallpaper(image: "assets/images/pet11.jpg"),
-    Wallpaper(image: "assets/images/pet12.jpg"),
-    Wallpaper(image: "assets/images/pet13.jpg"),
-    Wallpaper(image: "assets/images/pet14.jpg"),
-    Wallpaper(image: "assets/images/pet15.jpg"),
-    Wallpaper(image: "assets/images/pet16.jpg"),
-    Wallpaper(image: "assets/images/pet17.jpg"),
-    Wallpaper(image: "assets/images/pet18.jpg"),
-    Wallpaper(image: "assets/images/pet19.jpg"),
-  ];
+  //final List _images = [
+    //Wallpaper(image: "assets/images/pet0.jpg"),
+    //Wallpaper(image: "assets/images/pet1.jpg"),
+    //Wallpaper(image: "assets/images/pet2.jpg"),
+    //Wallpaper(image: "assets/images/pet3.jpg"),
+    //Wallpaper(image: "assets/images/pet4.jpg"),
+    //Wallpaper(image: "assets/images/pet5.jpg"),
+    //Wallpaper(image: "assets/images/pet6.jpg"),
+    //Wallpaper(image: "assets/images/pet7.jpg"),
+    //Wallpaper(image: "assets/images/pet8.jpg"),
+    //Wallpaper(image: "assets/images/pet9.jpg"),
+    //Wallpaper(image: "assets/images/pet10.jpg"),
+    //Wallpaper(image: "assets/images/pet11.jpg"),
+    //Wallpaper(image: "assets/images/pet12.jpg"),
+    //Wallpaper(image: "assets/images/pet13.jpg"),
+    //Wallpaper(image: "assets/images/pet14.jpg"),
+    //Wallpaper(image: "assets/images/pet15.jpg"),
+    //Wallpaper(image: "assets/images/pet16.jpg"),
+    //Wallpaper(image: "assets/images/pet17.jpg"),
+    //Wallpaper(image: "assets/images/pet18.jpg"),
+    //Wallpaper(image: "assets/images/pet19.jpg"),
+  //];
 
   int _index = 0;
 
@@ -96,21 +95,21 @@ class _MyHomeSaudadePageState extends State<MyHomeSaudadePage> {
         ),
       ),
       backgroundColor: Color.fromARGB(255, 0, 0, 0),
-      body: GridView.builder(
-        itemCount: _images.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 1,
-          mainAxisSpacing: 4.0,
-          crossAxisSpacing: 4.0,
-        ),
-        itemBuilder: (BuildContext context, int index) {
-          return Image.network(
-            _images[index].image,
-            fit: BoxFit.cover,
-          );
-        },
-      ),
+      //body: GridView.builder(
+        //itemCount: _images.length,
+        //gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          //crossAxisCount: 2,
+          //childAspectRatio: 1,
+          //mainAxisSpacing: 4.0,
+          //crossAxisSpacing: 4.0,
+        //),
+        //itemBuilder: (BuildContext context, int index) {
+          //return Image.network(
+            //_images[index].image,
+            //fit: BoxFit.cover,
+          //);
+        //},
+      //),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         type: BottomNavigationBarType.fixed,
