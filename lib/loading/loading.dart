@@ -33,14 +33,14 @@ class StartState extends State<LoadingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color.fromARGB(255, 0, 0, 0),
+        color: Color.fromARGB(255, 137, 95, 53),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Center(
               child: Container(
-                child: Image.asset("assets/icons/logo-pet.png"),
+                child: Image.asset("assets/logo-dog.png"),
                 width: 200,
               ),
             ),
