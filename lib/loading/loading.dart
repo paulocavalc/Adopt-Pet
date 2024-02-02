@@ -3,10 +3,6 @@ import 'dart:async';
 import 'package:boa_tarde/home/home.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(LoadingScreen());
-}
-
 class LoadingScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => StartState();
@@ -33,14 +29,14 @@ class StartState extends State<LoadingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color.fromARGB(255, 137, 95, 53),
+        color: Color.fromARGB(255, 212, 220, 222),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Center(
               child: Container(
-                child: Image.asset("assets/logo-dog.png"),
+                child: Image.asset("assets/logo-pet.png"),
                 width: 200,
               ),
             ),

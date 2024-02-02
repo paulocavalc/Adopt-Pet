@@ -14,19 +14,19 @@ class LoginPet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 137, 95, 53),
+        backgroundColor: Color.fromARGB(255, 212, 220, 222),
         centerTitle: true,
         title: Center(
           child: Text("Adopt Pet", 
             style: GoogleFonts.calistoga(
-              color: Color.fromARGB(255, 46, 0, 0), 
+              color: Color.fromARGB(255, 0, 0, 0), 
               fontSize: 38
             )
           ),
         ),
       ),
       body: Container(
-        color: Color.fromARGB(255, 151, 151, 151),
+        color: Color.fromARGB(255, 212, 220, 222),
         child: Center(
           child: SingleChildScrollView(
             child: Padding(
@@ -80,8 +80,8 @@ class LoginPet extends StatelessWidget {
                       },
                       child: Text('Login', style: TextStyle(fontSize: 18)),
                       style: ElevatedButton.styleFrom(
-                        primary: Color.fromARGB(255, 255, 98, 0),
-                        onPrimary: Colors.black,
+                        primary: Color.fromARGB(255, 0, 0, 0),
+                        onPrimary: Colors.white,
                         padding: EdgeInsets.all(20),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
@@ -98,8 +98,8 @@ class LoginPet extends StatelessWidget {
                       },
                       child: Text('Registre-se', style: TextStyle(fontSize: 18)),
                       style: ElevatedButton.styleFrom(
-                        primary: Color.fromARGB(255, 255, 98, 0),
-                        onPrimary: Colors.black,
+                        primary: Color.fromARGB(255, 0, 0, 0),
+                        onPrimary: Colors.white,
                         padding: EdgeInsets.all(20),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),

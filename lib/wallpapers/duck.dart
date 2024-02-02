@@ -19,7 +19,7 @@ class _Tela_PatoState extends State<Tela_Pato>
   Widget build(BuildContext context) {
     super.build(context);
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 137, 95, 53),
+      backgroundColor: Color.fromARGB(255, 212, 220, 222),
       body: GridView.builder(
         itemCount: duck.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

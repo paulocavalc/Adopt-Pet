@@ -21,24 +21,24 @@ class GridPetApp extends StatelessWidget {
       length: 10,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 137, 95, 53),
+          backgroundColor: Color.fromARGB(255, 212, 220, 222),
           centerTitle: true,
           title: Center(
             child: Text("Adopt Pet",
                 style: GoogleFonts.calistoga(
-                    color: Color.fromARGB(255, 46, 0, 0), fontSize: 38)
+                    color: Color.fromARGB(255, 0, 0, 0), fontSize: 38)
             ),
           ),
           bottom: TabBar(
             isScrollable: true,
             indicatorPadding: EdgeInsets.all(5),
             labelColor: Color.fromARGB(255, 255, 255, 255),
-            unselectedLabelColor: Color.fromARGB(255, 255, 255, 255),
-            labelStyle: TextStyle(fontSize: 14),
+            unselectedLabelColor: Color.fromARGB(255, 76, 85, 84),
+            labelStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
             labelPadding:
                 EdgeInsets.only(left: 30, right: 30, top: 0, bottom: 0),
             indicator: BoxDecoration(
-                color: Color.fromARGB(255, 46, 0, 0),
+                color: Color.fromARGB(255, 0, 0, 0),
                 borderRadius: BorderRadius.circular(80)),
             tabs: [
               Tab(

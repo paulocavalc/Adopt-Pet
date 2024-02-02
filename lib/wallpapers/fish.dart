@@ -19,7 +19,7 @@ class _Tela_PeixeState extends State<Tela_Peixe>
   Widget build(BuildContext context) {
     super.build(context);
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 137, 95, 53),
+      backgroundColor: Color.fromARGB(255, 212, 220, 222),
       body: GridView.builder(
         itemCount: fish.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
