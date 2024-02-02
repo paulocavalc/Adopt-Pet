@@ -57,8 +57,8 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Perfil',
           ),
         ],
-        selectedItemColor: Color.fromARGB(255, 0, 0, 0),
-        unselectedItemColor: Color.fromARGB(255, 76, 85, 84),
+        selectedItemColor: Color.fromARGB(255, 12, 29, 37),
+        unselectedItemColor: Color.fromARGB(255, 143, 160, 167),
       ),
     );
   }

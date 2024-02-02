@@ -19,7 +19,7 @@ class LoginPet extends StatelessWidget {
         title: Center(
           child: Text("Adopt Pet", 
             style: GoogleFonts.calistoga(
-              color: Color.fromARGB(255, 0, 0, 0), 
+              color: Color.fromARGB(255, 12, 29, 37), 
               fontSize: 38
             )
           ),
@@ -80,7 +80,7 @@ class LoginPet extends StatelessWidget {
                       },
                       child: Text('Login', style: TextStyle(fontSize: 18)),
                       style: ElevatedButton.styleFrom(
-                        primary: Color.fromARGB(255, 0, 0, 0),
+                        primary: Color.fromARGB(255, 12, 29, 37),
                         onPrimary: Colors.white,
                         padding: EdgeInsets.all(20),
                         shape: RoundedRectangleBorder(
@@ -98,7 +98,7 @@ class LoginPet extends StatelessWidget {
                       },
                       child: Text('Registre-se', style: TextStyle(fontSize: 18)),
                       style: ElevatedButton.styleFrom(
-                        primary: Color.fromARGB(255, 0, 0, 0),
+                        primary: Color.fromARGB(255, 12, 29, 37),
                         onPrimary: Colors.white,
                         padding: EdgeInsets.all(20),
                         shape: RoundedRectangleBorder(
