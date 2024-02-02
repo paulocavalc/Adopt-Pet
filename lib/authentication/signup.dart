@@ -15,13 +15,13 @@ class SignUpPet extends StatelessWidget {
  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(0, 0, 0, 1),
+        backgroundColor: Color.fromARGB(255, 137, 95, 53),
         centerTitle: true,
         title: Center(
-          child: Text("Registre-se",
+          child: Text("Adopt Pet", 
             style: GoogleFonts.calistoga(
-              color: Color.fromARGB(255, 255, 98, 0),
-              fontSize: 33
+              color: Color.fromARGB(255, 46, 0, 0), 
+              fontSize: 38
             )
           ),
         ),

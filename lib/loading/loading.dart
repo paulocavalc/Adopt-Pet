@@ -26,7 +26,7 @@ class StartState extends State<LoadingScreen> {
 
   route() {
     Navigator.pushReplacement(context, 
-        MaterialPageRoute(builder: (context) => MyHomePage(title: 'Adopt Pet')));
+        MaterialPageRoute(builder: (context) => MyHomePage()));
   }
 
   @override
