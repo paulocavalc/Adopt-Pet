@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color.fromARGB(255, 212, 220, 222),
+        backgroundColor: Color.fromARGB(255, 175, 175, 165),
         type: BottomNavigationBarType.fixed,
         iconSize: 30,
         showUnselectedLabels: false,
@@ -57,8 +57,8 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Perfil',
           ),
         ],
-        selectedItemColor: Color.fromARGB(255, 12, 29, 37),
-        unselectedItemColor: Color.fromARGB(255, 143, 160, 167),
+        selectedItemColor: Color.fromARGB(255, 9, 27, 29),
+        unselectedItemColor: Color.fromARGB(255, 93, 93, 93),
       ),
     );
   }
