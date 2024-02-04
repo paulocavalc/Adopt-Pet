@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color.fromARGB(255, 208, 195, 163),
+        backgroundColor: Color.fromARGB(255, 254, 254, 230),
         type: BottomNavigationBarType.fixed,
         iconSize: 30,
         showUnselectedLabels: false,

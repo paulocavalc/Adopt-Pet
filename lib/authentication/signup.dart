@@ -15,7 +15,7 @@ class SignUpPet extends StatelessWidget {
  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 208, 195, 163),
+        backgroundColor: Color.fromARGB(255, 254, 254, 230),
         centerTitle: true,
         title: Center(
           child: Text("Adopt Pet", 
@@ -26,7 +26,7 @@ class SignUpPet extends StatelessWidget {
           ),
         ),
       ),
-      backgroundColor: Color.fromARGB(255, 208, 195, 163),
+      backgroundColor: Color.fromARGB(255, 254, 254, 230),
       body: Form(
         key: _formKey,
         child: SingleChildScrollView(

@@ -14,7 +14,7 @@ class LoginPet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 208, 195, 163),
+        backgroundColor: Color.fromARGB(255, 254, 254, 230),
         centerTitle: true,
         title: Center(
           child: Text("Adopt Pet", 
@@ -26,7 +26,7 @@ class LoginPet extends StatelessWidget {
         ),
       ),
       body: Container(
-        color: Color.fromARGB(255, 208, 195, 163),
+        color: Color.fromARGB(255, 254, 254, 230),
         child: Center(
           child: SingleChildScrollView(
             child: Padding(

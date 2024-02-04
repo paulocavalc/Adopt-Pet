@@ -21,7 +21,7 @@ class GridPetApp extends StatelessWidget {
       length: 11,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 208, 195, 163),
+          backgroundColor: Color.fromARGB(255, 254, 254, 230),
           centerTitle: true,
           title: Center(
             child: Text("Adopt Pet",

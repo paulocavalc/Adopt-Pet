@@ -19,7 +19,7 @@ class _Tela_GalinhaState extends State<Tela_Galinha>
   Widget build(BuildContext context) {
     super.build(context);
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 208, 195, 163),
+      backgroundColor: Color.fromARGB(255, 254, 254, 230),
       body: GridView.builder(
         itemCount: hen.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
