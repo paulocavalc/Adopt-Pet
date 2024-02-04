@@ -19,7 +19,7 @@ class _Tela_GatoState extends State<Tela_Gato>
   Widget build(BuildContext context) {
     super.build(context);
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 175, 175, 165),
+      backgroundColor: Color.fromARGB(255, 208, 195, 163),
       body: GridView.builder(
         itemCount: cat.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

@@ -18,64 +18,69 @@ class GridPetApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 10,
+      length: 11,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 175, 175, 165),
+          backgroundColor: Color.fromARGB(255, 208, 195, 163),
           centerTitle: true,
           title: Center(
             child: Text("Adopt Pet",
                 style: GoogleFonts.calistoga(
-                    color: Color.fromARGB(255, 9, 27, 29), fontSize: 38)
+                    color: Color.fromARGB(255, 18, 9, 2), fontSize: 38)
             ),
           ),
           bottom: TabBar(
             isScrollable: true,
-            indicatorPadding: EdgeInsets.all(5),
             labelColor: Color.fromARGB(255, 255, 255, 255),
             unselectedLabelColor: Color.fromARGB(255, 93, 93, 93),
-            labelStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            labelStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             labelPadding:
-                EdgeInsets.only(left: 30, right: 30, top: 0, bottom: 0),
+              EdgeInsets.only(left: 20, right: 20, top: 0, bottom: 0
+            ),
             indicator: BoxDecoration(
-                color: Color.fromARGB(255, 9, 27, 29),
-                borderRadius: BorderRadius.circular(80)),
+              color: Color.fromARGB(255, 18, 9, 2),
+              //borderRadius: BorderRadius.circular(80)
+            ),
             tabs: [
               Tab(
-                text: 'CACHORRO',
+                text: 'Tudo',
               ),
               Tab(
-                text: 'CAVALO',
+                text: 'Cachorro',
               ),
               Tab(
-                text: 'ESQUILO',
+                text: 'Cavalo',
               ),
               Tab(
-                text: 'GALINHA',
+                text: 'Esquilo',
               ),
               Tab(
-                text: 'GATO',
+                text: 'Galinha',
               ),
               Tab(
-                text: 'PATO',
+                text: 'Gato',
               ),
               Tab(
-                text: 'PEIXE',
+                text: 'Pato',
               ),
               Tab(
-                text: 'PINGUIM',
+                text: 'Peixe',
               ),
               Tab(
-                text: 'POMBA',
+                text: 'Pinguim',
               ),
               Tab(
-                text: 'TARTARUGA',
+                text: 'Pomba',
+              ),
+              Tab(
+                text: 'Tartaruga',
               ),
             ],
           ),
         ),
         body: TabBarView(
           children: [
+            Tela_Cachorro(),
             Tela_Cachorro(),
             Tela_Cavalo(),
             Tela_Esquilo(),

@@ -19,7 +19,7 @@ class _Tela_PombaState extends State<Tela_Pomba>
   Widget build(BuildContext context) {
     super.build(context);
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 175, 175, 165),
+      backgroundColor: Color.fromARGB(255, 208, 195, 163),
       body: GridView.builder(
         itemCount: dove.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
