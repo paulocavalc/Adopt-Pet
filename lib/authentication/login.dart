@@ -14,19 +14,19 @@ class LoginPet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 254, 254, 230),
+        backgroundColor: Color.fromARGB(255, 195, 195, 193),
         centerTitle: true,
         title: Center(
           child: Text("Adopt Pet", 
             style: GoogleFonts.calistoga(
-              color: Color.fromARGB(255, 18, 9, 2), 
+              color: Color.fromARGB(255, 0, 0, 0), 
               fontSize: 38
             )
           ),
         ),
       ),
       body: Container(
-        color: Color.fromARGB(255, 254, 254, 230),
+        color: Color.fromARGB(255, 195, 195, 193),
         child: Center(
           child: SingleChildScrollView(
             child: Padding(
@@ -80,7 +80,7 @@ class LoginPet extends StatelessWidget {
                       },
                       child: Text('Login', style: TextStyle(fontSize: 18)),
                       style: ElevatedButton.styleFrom(
-                        primary: Color.fromARGB(255, 18, 9, 2),
+                        primary: Color.fromARGB(255, 0, 0, 0),
                         onPrimary: Colors.white,
                         padding: EdgeInsets.all(20),
                         shape: RoundedRectangleBorder(
@@ -98,7 +98,7 @@ class LoginPet extends StatelessWidget {
                       },
                       child: Text('Registre-se', style: TextStyle(fontSize: 18)),
                       style: ElevatedButton.styleFrom(
-                        primary: Color.fromARGB(255, 18, 9, 2),
+                        primary: Color.fromARGB(255, 0, 0, 0),
                         onPrimary: Colors.white,
                         padding: EdgeInsets.all(20),
                         shape: RoundedRectangleBorder(

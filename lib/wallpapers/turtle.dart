@@ -19,7 +19,7 @@ class _Tela_TartarugaState extends State<Tela_Tartaruga>
   Widget build(BuildContext context) {
     super.build(context);
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 254, 254, 230),
+      backgroundColor: Color.fromARGB(255, 195, 195, 193),
       body: GridView.builder(
         itemCount: turtle.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

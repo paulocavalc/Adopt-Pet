@@ -30,7 +30,7 @@ class StartState extends State<LoadingScreen> {
     return Scaffold(
       body: Container(
         //color: Color.fromARGB(255, 208, 195, 163),
-        color: Color.fromARGB(255, 254, 254, 230),
+        color: Color.fromARGB(255, 195, 195, 193),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,

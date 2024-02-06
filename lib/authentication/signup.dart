@@ -15,18 +15,18 @@ class SignUpPet extends StatelessWidget {
  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 254, 254, 230),
+        backgroundColor: Color.fromARGB(255, 195, 195, 193),
         centerTitle: true,
         title: Center(
           child: Text("Adopt Pet", 
             style: GoogleFonts.calistoga(
-              color: Color.fromARGB(255, 18, 9, 2), 
+              color: Color.fromARGB(255, 0, 0, 0), 
               fontSize: 38
             )
           ),
         ),
       ),
-      backgroundColor: Color.fromARGB(255, 254, 254, 230),
+      backgroundColor: Color.fromARGB(255, 195, 195, 193),
       body: Form(
         key: _formKey,
         child: SingleChildScrollView(
@@ -94,7 +94,7 @@ class SignUpPet extends StatelessWidget {
                 },
                 child: Text('Enviar', style: TextStyle(fontSize: 18)),
                 style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 18, 9, 2),
+                  primary: Color.fromARGB(255, 0, 0, 0),
                   onPrimary: Colors.white,
                   padding: EdgeInsets.all(20),
                   shape: RoundedRectangleBorder(
