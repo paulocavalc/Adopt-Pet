@@ -1,6 +1,7 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors
+// ignore_for_file: camel_case_types, prefer_const_constructors, unused_label
 
 import 'package:boa_tarde/model/dog-model.dart';
+import 'package:boa_tarde/screen/dog-detail.dart';
 import 'package:flutter/material.dart';
 
 class Tela_Cachorro extends StatefulWidget {
@@ -12,7 +13,6 @@ class Tela_Cachorro extends StatefulWidget {
 
 class _Tela_CachorroState extends State<Tela_Cachorro>
     with AutomaticKeepAliveClientMixin {
-  
   @override
   bool get wantKeepAlive => true;
   @override
@@ -29,9 +29,18 @@ class _Tela_CachorroState extends State<Tela_Cachorro>
           crossAxisSpacing: 4.0,
         ),
         itemBuilder: (BuildContext context, int index) {
-          return Image.network(
-            dog[index].dog,
-            fit: BoxFit.cover,
+          Cachorro dogs = dog[index];
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => DogDetailScreen(dogs)));
+            },
+            child: Image.network(
+              dog[index].dog,
+              fit: BoxFit.cover,
+            ),
           );
         },
       ),
