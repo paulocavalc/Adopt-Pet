@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors
 
 import 'package:boa_tarde/model/cat-model.dart';
+import 'package:boa_tarde/screen/cat-detail.dart';
 import 'package:flutter/material.dart';
 
 class Tela_Gato extends StatefulWidget {
@@ -29,9 +30,18 @@ class _Tela_GatoState extends State<Tela_Gato>
           crossAxisSpacing: 4.0,
         ),
         itemBuilder: (BuildContext context, int index) {
-          return Image.network(
-            cat[index].cat,
-            fit: BoxFit.cover,
+          Gato cats = cat[index];
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => CatDetailScreen(cats)));
+            },
+            child: Image.network(
+              cat[index].cat,
+              fit: BoxFit.cover,
+            ),
           );
         },
       ),

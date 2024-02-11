@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors
 
 import 'package:boa_tarde/model/turtle-model.dart';
+import 'package:boa_tarde/screen/turtle-detail.dart';
 import 'package:flutter/material.dart';
 
 class Tela_Tartaruga extends StatefulWidget {
@@ -29,9 +30,18 @@ class _Tela_TartarugaState extends State<Tela_Tartaruga>
           crossAxisSpacing: 4.0,
         ),
         itemBuilder: (BuildContext context, int index) {
-          return Image.network(
-            turtle[index].turtle,
-            fit: BoxFit.cover,
+          Tartaruga turtles = turtle[index];
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => TurtleDetailScreen(turtles)));
+            },
+            child: Image.network(
+              turtle[index].turtle,
+              fit: BoxFit.cover,
+            ),
           );
         },
       ),

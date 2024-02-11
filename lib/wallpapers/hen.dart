@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors
 
 import 'package:boa_tarde/model/hen-model.dart';
+import 'package:boa_tarde/screen/hen-detail.dart';
 import 'package:flutter/material.dart';
 
 class Tela_Galinha extends StatefulWidget {
@@ -29,9 +30,18 @@ class _Tela_GalinhaState extends State<Tela_Galinha>
           crossAxisSpacing: 4.0,
         ),
         itemBuilder: (BuildContext context, int index) {
-          return Image.network(
-            hen[index].hen,
-            fit: BoxFit.cover,
+          Galinha hens = hen[index];
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => HenDetailScreen(hens)));
+            },
+            child: Image.network(
+              hen[index].hen,
+              fit: BoxFit.cover,
+            ),
           );
         },
       ),

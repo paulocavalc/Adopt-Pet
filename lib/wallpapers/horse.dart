@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors
 
 import 'package:boa_tarde/model/horse-model.dart';
+import 'package:boa_tarde/screen/horse-detail.dart';
 import 'package:flutter/material.dart';
 
 class Tela_Cavalo extends StatefulWidget {
@@ -29,9 +30,18 @@ class _Tela_CavaloState extends State<Tela_Cavalo>
           crossAxisSpacing: 4.0,
         ),
         itemBuilder: (BuildContext context, int index) {
-          return Image.network(
-            horse[index].horse,
-            fit: BoxFit.cover,
+          Cavalo horses = horse[index];
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => HorseDetailScreen(horses)));
+            },
+            child: Image.network(
+              horse[index].horse,
+              fit: BoxFit.cover,
+            ),
           );
         },
       ),

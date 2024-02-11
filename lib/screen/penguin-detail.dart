@@ -1,12 +1,12 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, library_private_types_in_public_api, prefer_const_constructors_in_immutables, file_names
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_constructors_in_immutables, file_names
 
-import 'package:boa_tarde/model/dog-model.dart';
+import 'package:boa_tarde/model/penguin-model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class DogDetailScreen extends StatelessWidget {
-  final Cachorro dogs;
-  DogDetailScreen(this.dogs);
+class PenguinDetailScreen extends StatelessWidget {
+  final Pinguim penguins;
+  PenguinDetailScreen(this.penguins);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class DogDetailScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.network(
-                dogs.dog,
+                penguins.penguin,
                 width: double.infinity,
                 height: 450,
                 fit: BoxFit.cover
@@ -38,7 +38,7 @@ class DogDetailScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
-                  dogs.title,
+                  penguins.title,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     color: Color.fromARGB(255, 223, 204, 152),
@@ -50,7 +50,7 @@ class DogDetailScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
-                  dogs.description,
+                  penguins.description,
                   textAlign: TextAlign.justify,
                   style: GoogleFonts.poppins(
                     color: Color.fromARGB(255, 255, 255, 255),
