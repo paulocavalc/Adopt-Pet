@@ -19,7 +19,7 @@ class _Tela_CachorroState extends State<Tela_Cachorro>
   Widget build(BuildContext context) {
     super.build(context);
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 195, 195, 193),
+      backgroundColor: Color.fromARGB(255, 45, 45, 45),
       body: GridView.builder(
         itemCount: dog.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

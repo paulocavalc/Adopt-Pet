@@ -14,19 +14,19 @@ class LoginPet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 195, 195, 193),
+        backgroundColor: Color.fromARGB(255, 45, 45, 45),
         centerTitle: true,
         title: Center(
           child: Text("Adopt Pet", 
             style: GoogleFonts.calistoga(
-              color: Color.fromARGB(255, 0, 0, 0), 
+              color: Color.fromARGB(255, 223, 204, 152), 
               fontSize: 38
             )
           ),
         ),
       ),
       body: Container(
-        color: Color.fromARGB(255, 195, 195, 193),
+        color: Color.fromARGB(255, 45, 45, 45),
         child: Center(
           child: SingleChildScrollView(
             child: Padding(
