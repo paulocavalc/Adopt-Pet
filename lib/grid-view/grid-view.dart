@@ -35,11 +35,10 @@ class GridPetApp extends StatelessWidget {
             unselectedLabelColor: Color.fromARGB(255, 157, 157, 157),
             labelStyle: TextStyle(fontSize: 16),
             labelPadding:
-              EdgeInsets.only(left: 20, right: 20, top: 0, bottom: 0
+              EdgeInsets.only(left: 30, right: 30, top: 0, bottom: 0
             ),
             indicator: BoxDecoration(
-              color: Color.fromARGB(255, 0, 0, 0),
-              //borderRadius: BorderRadius.circular(80)
+              color: Color.fromARGB(255, 36, 36, 36),
             ),
             tabs: [
               Tab(
