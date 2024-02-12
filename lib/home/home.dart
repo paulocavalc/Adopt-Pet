@@ -2,7 +2,7 @@
 
 import 'package:boa_tarde/authentication/login.dart';
 import 'package:boa_tarde/authentication/signup.dart';
-import 'package:boa_tarde/grid-view/grid-view.dart';
+import 'package:boa_tarde/all-pages/grid-view.dart';
 import 'package:flutter/material.dart';
 
 class HomeApp extends StatelessWidget {
