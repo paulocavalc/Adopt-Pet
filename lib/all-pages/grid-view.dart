@@ -33,55 +33,10 @@ class GridPetApp extends StatelessWidget {
               color: Color.fromARGB(255, 36, 36, 36),
             ),
             tabs: AllPages.allPages.map((page) => Tab(text: page.title,),).toList(),
-            //tabs: [
-              //Tab(
-                //text: 'Cachorro',
-              //),
-              //Tab(
-                //text: 'Cavalo',
-              //),
-              //Tab(
-                //text: 'Esquilo',
-              //),
-              //Tab(
-                //text: 'Galinha',
-              //),
-              //Tab(
-                //text: 'Gato',
-              //),
-              //Tab(
-                //text: 'Pato',
-              //),
-              //Tab(
-                //text: 'Peixe',
-              //),
-              //Tab(
-                //text: 'Pinguim',
-              //),
-              //Tab(
-                //text: 'Pomba',
-              //),
-              //Tab(
-                //text: 'Tartaruga',
-              //),
-            //],
           ),
         ),
         body: TabBarView(
           children: AllPages.allPages.map((page) => PageViewer(page: page,),).toList(),
-          //children: [
-            //Tela_Cachorro(),
-            //Tela_Cachorro(),
-            //Tela_Cavalo(),
-            //Tela_Esquilo(),
-            //Tela_Galinha(),
-            //Tela_Gato(),
-            //Tela_Pato(),
-            //Tela_Peixe(),
-            //Tela_Pinguim(),
-            //Tela_Pomba(),
-            //Tela_Tartaruga(),
-          //],
         ),
       ),
     );
