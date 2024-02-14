@@ -31,35 +31,3 @@ class AllPages {
     AllPages(content: Tela_Tartaruga(), title: 'Tartaruga'),
   ];
 }
-//tabs: [
-              //Tab(
-                //text: 'Cachorro',
-              //),
-              //Tab(
-                //text: 'Cavalo',
-              //),
-              //Tab(
-                //text: 'Esquilo',
-              //),
-              //Tab(
-                //text: 'Galinha',
-              //),
-              //Tab(
-                //text: 'Gato',
-              //),
-              //Tab(
-                //text: 'Pato',
-              //),
-              //Tab(
-                //text: 'Peixe',
-              //),
-              //Tab(
-                //text: 'Pinguim',
-              //),
-              //Tab(
-                //text: 'Pomba',
-              //),
-              //Tab(
-                //text: 'Tartaruga',
-              //),
-            //],

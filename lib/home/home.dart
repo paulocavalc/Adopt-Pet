@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, library_private_types_in_public_api
 
 import 'package:boa_tarde/authentication/login.dart';
-import 'package:boa_tarde/authentication/signup.dart';
 import 'package:boa_tarde/all-pages/grid-view.dart';
+import 'package:boa_tarde/upload/capture.dart';
 import 'package:flutter/material.dart';
 
 class HomeApp extends StatelessWidget {
@@ -27,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final screens = [
     GridPetApp(),
-    SignUpPet(),
+    CaptureImageApp(),
     LoginPet(),
   ];
 
