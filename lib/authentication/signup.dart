@@ -87,7 +87,7 @@ class SignUpPet extends StatelessWidget {
                   if (_formKey.currentState!.validate()) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                        content: Text('Registrado com sucesso!', style: TextStyle(backgroundColor: Color.fromARGB(255, 0, 132, 20))),
+                        content: Text('Registrado com sucesso!', style: TextStyle(color: Color.fromARGB(255, 0, 132, 20))),
                       ),
                     );
                   }
