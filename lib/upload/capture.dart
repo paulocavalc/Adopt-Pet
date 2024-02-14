@@ -1,11 +1,11 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, library_private_types_in_public_api, avoid_print, prefer_const_literals_to_create_immutables, sort_child_properties_last, deprecated_member_use
 
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
+//import 'package:image_picker_web/image_picker_web.dart';
 
 class CaptureImageApp extends StatelessWidget {
   @override
@@ -29,9 +29,9 @@ class _CaptureImagePageState extends State<CaptureImagePage> {
     try {
       final image = await ImagePicker().pickImage(source: source);
       if (image == null) return;
-
       final imageTemporary = File(image.path);
       setState(() => this.image = imageTemporary);
+      
     } on PlatformException catch (e) {
       print("Falha ao escolher a imagem: $e");
     }
@@ -51,7 +51,7 @@ class _CaptureImagePageState extends State<CaptureImagePage> {
       ),
       backgroundColor: Color.fromARGB(255, 45, 45, 45),
       body: Container(
-        padding: EdgeInsets.all(30),
+        padding: EdgeInsets.all(8.0),
         child: Column(
           children: [
             Spacer(),
@@ -72,6 +72,7 @@ class _CaptureImagePageState extends State<CaptureImagePage> {
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 30),
+
             buildButton(
               title: "Escolha a Galeria",
               icon: Icons.image_outlined,
