@@ -1,41 +1,33 @@
-// ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_constructors, prefer_void_to_null, non_constant_identifier_names, unused_field, avoid_print, sort_child_properties_last, deprecated_member_use, must_be_immutable, sized_box_for_whitespace, prefer_final_fields, prefer_typing_uninitialized_variables, valid_regexps, unnecessary_null_comparison
+// ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_constructors, prefer_void_to_null, non_constant_identifier_names, unused_field, avoid_print, sort_child_properties_last, deprecated_member_use, must_be_immutable, sized_box_for_whitespace, prefer_final_fields, prefer_typing_uninitialized_variables, valid_regexps, unnecessary_null_comparison, file_names
 
-import 'package:boa_tarde/authentication/sign-up.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginPet extends StatefulWidget {
+class SignUpPet extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => LoginPetState();
+  State<StatefulWidget> createState() => SignUpPetState();
 }
 
-class LoginPetState extends State<LoginPet> {
+class SignUpPetState extends State<SignUpPet> {
   final _formKey = GlobalKey<FormState>();
+  final nameText = TextEditingController();
   final emailText = TextEditingController();
   final passwordText = TextEditingController();
+  final confirmePasswordText = TextEditingController();
 
+  String _nome = '';
   String _email = '';
   String _password = '';
+  String _confirmPassword = '';
 
   var _isObscureText;
+  var _isObscureTextX;
 
   @override
   void initState() {
     super.initState();
     _isObscureText = true;
-  }
-
-  Widget buildForgotPassword() {
-    return Container(
-      alignment: Alignment.centerRight,
-      child: TextButton(
-          onPressed: () => print("Esqueceu a senha pressionada"),
-          child: Text(
-            "Esqueceu a senha?",
-            style: TextStyle(
-                color: Color.fromARGB(255, 255, 255, 255), fontSize: 15),
-          )),
-    );
+    _isObscureTextX = true;
   }
 
   Widget buildLoginButton() {
@@ -52,7 +44,7 @@ class LoginPetState extends State<LoginPet> {
             }
           }
         },
-        child: Text("LOGIN",
+        child: Text("INSCREVA-SE",
             style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold)),
         style: ElevatedButton.styleFrom(
           minimumSize: Size(double.infinity, 55),
@@ -90,7 +82,42 @@ class LoginPetState extends State<LoginPet> {
                     TextFormField(
                       validator: (value) {
                         if (value!.isEmpty || value == null) {
-                          return 'Digite um endereço de e-mail válido';
+                          return 'Digite seu nome completo';
+                        }
+                        return null;
+                      },
+                      style: TextStyle(
+                          color: const Color.fromARGB(255, 157, 157, 157)),
+                      keyboardType: TextInputType.emailAddress,
+                      controller: nameText,
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.all(20),
+                        filled: true,
+                        fillColor: const Color.fromARGB(255, 0, 0, 0),
+                        hintText: "Nome Completo",
+                        hintStyle: TextStyle(
+                            color: const Color.fromARGB(255, 157, 157, 157)),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(60),
+                          borderSide: BorderSide(
+                              color: Color.fromARGB(255, 223, 204, 152),
+                              width: 1.5),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(60),
+                          borderSide: BorderSide(
+                              color: Color.fromARGB(255, 0, 0, 0), width: 1.5),
+                        ),
+                      ),
+                      onSaved: (value) {
+                        _email = value!;
+                      },
+                    ),
+                    Container(height: 20),
+                    TextFormField(
+                      validator: (value) {
+                        if (value!.isEmpty || value == null) {
+                          return 'Digite seu e-mail';
                         }
                         return null;
                       },
@@ -125,7 +152,7 @@ class LoginPetState extends State<LoginPet> {
                     TextFormField(
                       validator: (value) {
                         if (value!.isEmpty || value == null) {
-                          return 'Digite uma senha válida';
+                          return 'Digite sua senha';
                         }
                         return null;
                       },
@@ -166,39 +193,59 @@ class LoginPetState extends State<LoginPet> {
                         ),
                       ),
                       onSaved: (value) {
-                        _email = value!;
+                        _password = value!;
                       },
                     ),
-                    SizedBox(height: 12),
-                    buildForgotPassword(),
-                    SizedBox(height: 24),
-                    buildLoginButton(),
-                    SizedBox(height: 15),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Já tem uma conta?",
-                          style: TextStyle(
-                              color: const Color.fromARGB(255, 223, 204, 152),
-                              fontSize: 16),
+                    Container(height: 20),
+                    TextFormField(
+                      validator: (value) {
+                        if (value!.isEmpty || value == null) {
+                          return 'Digite sua senha confirme';
+                        }
+                        return null;
+                      },
+                      style: TextStyle(
+                          color: const Color.fromARGB(255, 157, 157, 157)),
+                      keyboardType: TextInputType.visiblePassword,
+                      controller: confirmePasswordText,
+                      obscureText: _isObscureTextX,
+                      decoration: InputDecoration(
+                        suffixIcon: IconButton(
+                          color: const Color.fromARGB(255, 223, 204, 152),
+                          padding: EdgeInsetsDirectional.only(end: 20),
+                          icon: _isObscureTextX
+                              ? Icon(Icons.visibility)
+                              : Icon(Icons.visibility_off),
+                          onPressed: () {
+                            setState(() {
+                              _isObscureTextX = !_isObscureTextX;
+                            });
+                          },
                         ),
-                        TextButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => SignUpPet()));
-                            },
-                            child: Text(
-                              "Inscreva-se",
-                              style: TextStyle(
-                                  color: Color.fromARGB(255, 36, 78, 246),
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold),
-                            ))
-                      ],
+                        contentPadding: EdgeInsets.all(20),
+                        filled: true,
+                        fillColor: const Color.fromARGB(255, 0, 0, 0),
+                        hintText: "Senha Confirme",
+                        hintStyle: TextStyle(
+                            color: const Color.fromARGB(255, 157, 157, 157)),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(60),
+                          borderSide: BorderSide(
+                              color: Color.fromARGB(255, 223, 204, 152),
+                              width: 1.5),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(60),
+                          borderSide: BorderSide(
+                              color: Color.fromARGB(255, 0, 0, 0), width: 1.5),
+                        ),
+                      ),
+                      onSaved: (value) {
+                        _confirmPassword = value!;
+                      },
                     ),
+                    SizedBox(height: 25),
+                    buildLoginButton(),
                   ]),
             ),
           ),
