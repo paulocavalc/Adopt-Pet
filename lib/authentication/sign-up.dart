@@ -34,23 +34,15 @@ class SignUpPetState extends State<SignUpPet> {
     return Container(
       alignment: Alignment.center,
       child: ElevatedButton(
-        onPressed: () async {
+        onPressed: () {
           if (_formKey.currentState!.validate()) {
             _formKey.currentState!.save();
-            try {
-              // Login logic here
-            } catch (e) {
-              print(e);
-            }
-          }
+          } else {}
         },
         child: Text("INSCREVA-SE",
             style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold)),
         style: ElevatedButton.styleFrom(
           minimumSize: Size(double.infinity, 55),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(60),
-          ),
           primary: Color.fromARGB(255, 223, 204, 152),
           onPrimary: Color.fromARGB(255, 0, 0, 0),
         ),
@@ -80,16 +72,17 @@ class SignUpPetState extends State<SignUpPet> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     TextFormField(
+                      keyboardType: TextInputType.emailAddress,
+                      controller: nameText,
                       validator: (value) {
-                        if (value!.isEmpty || value == null) {
+                        if (value == '') {
                           return 'Digite seu nome completo';
                         }
                         return null;
                       },
                       style: TextStyle(
-                          color: const Color.fromARGB(255, 157, 157, 157)),
-                      keyboardType: TextInputType.emailAddress,
-                      controller: nameText,
+                          color: const Color.fromARGB(255, 157, 157, 157)
+                      ),
                       decoration: InputDecoration(
                         contentPadding: EdgeInsets.all(20),
                         filled: true,
@@ -98,13 +91,11 @@ class SignUpPetState extends State<SignUpPet> {
                         hintStyle: TextStyle(
                             color: const Color.fromARGB(255, 157, 157, 157)),
                         focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(60),
                           borderSide: BorderSide(
                               color: Color.fromARGB(255, 223, 204, 152),
                               width: 1.5),
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(60),
                           borderSide: BorderSide(
                               color: Color.fromARGB(255, 0, 0, 0), width: 1.5),
                         ),
@@ -113,18 +104,19 @@ class SignUpPetState extends State<SignUpPet> {
                         _email = value!;
                       },
                     ),
-                    Container(height: 20),
+                    Container(height: 30),
                     TextFormField(
+                      keyboardType: TextInputType.emailAddress,
+                      controller: emailText,
                       validator: (value) {
-                        if (value!.isEmpty || value == null) {
+                        if (value == '') {
                           return 'Digite seu e-mail';
                         }
                         return null;
                       },
                       style: TextStyle(
-                          color: const Color.fromARGB(255, 157, 157, 157)),
-                      keyboardType: TextInputType.emailAddress,
-                      controller: emailText,
+                          color: const Color.fromARGB(255, 157, 157, 157)
+                      ),
                       decoration: InputDecoration(
                         contentPadding: EdgeInsets.all(20),
                         filled: true,
@@ -133,13 +125,11 @@ class SignUpPetState extends State<SignUpPet> {
                         hintStyle: TextStyle(
                             color: const Color.fromARGB(255, 157, 157, 157)),
                         focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(60),
                           borderSide: BorderSide(
                               color: Color.fromARGB(255, 223, 204, 152),
                               width: 1.5),
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(60),
                           borderSide: BorderSide(
                               color: Color.fromARGB(255, 0, 0, 0), width: 1.5),
                         ),
@@ -148,19 +138,20 @@ class SignUpPetState extends State<SignUpPet> {
                         _email = value!;
                       },
                     ),
-                    Container(height: 20),
+                    Container(height: 30),
                     TextFormField(
+                      keyboardType: TextInputType.visiblePassword,
+                      controller: passwordText,
+                      obscureText: _isObscureText,
                       validator: (value) {
-                        if (value!.isEmpty || value == null) {
+                        if (value == '') {
                           return 'Digite sua senha';
                         }
                         return null;
                       },
                       style: TextStyle(
-                          color: const Color.fromARGB(255, 157, 157, 157)),
-                      keyboardType: TextInputType.visiblePassword,
-                      controller: passwordText,
-                      obscureText: _isObscureText,
+                          color: const Color.fromARGB(255, 157, 157, 157)
+                      ),
                       decoration: InputDecoration(
                         suffixIcon: IconButton(
                           color: const Color.fromARGB(255, 223, 204, 152),
@@ -181,13 +172,11 @@ class SignUpPetState extends State<SignUpPet> {
                         hintStyle: TextStyle(
                             color: const Color.fromARGB(255, 157, 157, 157)),
                         focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(60),
                           borderSide: BorderSide(
                               color: Color.fromARGB(255, 223, 204, 152),
                               width: 1.5),
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(60),
                           borderSide: BorderSide(
                               color: Color.fromARGB(255, 0, 0, 0), width: 1.5),
                         ),
@@ -196,19 +185,20 @@ class SignUpPetState extends State<SignUpPet> {
                         _password = value!;
                       },
                     ),
-                    Container(height: 20),
+                    Container(height: 30),
                     TextFormField(
+                      keyboardType: TextInputType.visiblePassword,
+                      controller: confirmePasswordText,
+                      obscureText: _isObscureTextX,
                       validator: (value) {
-                        if (value!.isEmpty || value == null) {
+                        if (value == '') {
                           return 'Digite sua senha confirme';
                         }
                         return null;
                       },
                       style: TextStyle(
-                          color: const Color.fromARGB(255, 157, 157, 157)),
-                      keyboardType: TextInputType.visiblePassword,
-                      controller: confirmePasswordText,
-                      obscureText: _isObscureTextX,
+                          color: const Color.fromARGB(255, 157, 157, 157)
+                      ),
                       decoration: InputDecoration(
                         suffixIcon: IconButton(
                           color: const Color.fromARGB(255, 223, 204, 152),
@@ -225,17 +215,15 @@ class SignUpPetState extends State<SignUpPet> {
                         contentPadding: EdgeInsets.all(20),
                         filled: true,
                         fillColor: const Color.fromARGB(255, 0, 0, 0),
-                        hintText: "Senha Confirme",
+                        hintText: "Confirme Senha",
                         hintStyle: TextStyle(
                             color: const Color.fromARGB(255, 157, 157, 157)),
                         focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(60),
                           borderSide: BorderSide(
                               color: Color.fromARGB(255, 223, 204, 152),
                               width: 1.5),
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(60),
                           borderSide: BorderSide(
                               color: Color.fromARGB(255, 0, 0, 0), width: 1.5),
                         ),
@@ -244,7 +232,7 @@ class SignUpPetState extends State<SignUpPet> {
                         _confirmPassword = value!;
                       },
                     ),
-                    SizedBox(height: 25),
+                    SizedBox(height: 30),
                     buildLoginButton(),
                   ]),
             ),

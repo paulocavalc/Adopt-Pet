@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, library_private_types_in_public_api, avoid_print, prefer_const_literals_to_create_immutables, sort_child_properties_last, deprecated_member_use
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, library_private_types_in_public_api, avoid_print, prefer_const_literals_to_create_immutables, sort_child_properties_last, deprecated_member_use, sized_box_for_whitespace
 
 import 'dart:io';
 import 'package:flutter/material.dart';
@@ -49,42 +49,45 @@ class _CaptureImagePageState extends State<CaptureImagePage> {
         ),
       ),
       backgroundColor: Color.fromARGB(255, 45, 45, 45),
-      body: Container(
-        padding: EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Spacer(),
-            image != null
-                ? Image.file(
-                    image!,
-                    width: 100,
-                    height: 100,
-                    fit: BoxFit.cover,
-                  )
-                : FlutterLogo(size: 100),
-            SizedBox(height: 25),
-            Text(
-              "Image Packer",
-              style: TextStyle(
-                  color: Color.fromARGB(255, 223, 204, 152),
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 30),
-
-            buildButton(
-              title: "Escolha a Galeria",
-              icon: Icons.image_outlined,
-              onClicked: () => pickImage(ImageSource.gallery),
-            ),
-            SizedBox(height: 24),
-            buildButton(
-              title: "Escolha a Câmera",
-              icon: Icons.camera_alt_outlined,
-              onClicked: () => pickImage(ImageSource.camera),
-            ),
-            Spacer(),
-          ],
+      body: Center(
+        child: Container(
+          width: 400,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Spacer(),
+              image != null
+                  ? Image.file(
+                      image!,
+                      width: 100,
+                      height: 100,
+                      fit: BoxFit.cover,
+                    )
+                  : FlutterLogo(size: 100),
+              SizedBox(height: 25),
+              Text(
+                "Image Packer",
+                style: TextStyle(
+                    color: Color.fromARGB(255, 223, 204, 152),
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 30),
+        
+              buildButton(
+                title: "Escolha a Galeria",
+                icon: Icons.image_outlined,
+                onClicked: () => pickImage(ImageSource.gallery),
+              ),
+              SizedBox(height: 24),
+              buildButton(
+                title: "Escolha a Câmera",
+                icon: Icons.camera_alt_outlined,
+                onClicked: () => pickImage(ImageSource.camera),
+              ),
+              Spacer(),
+            ],
+          ),
         ),
       ),
     );

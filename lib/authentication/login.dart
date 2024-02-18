@@ -33,7 +33,7 @@ class LoginPetState extends State<LoginPet> {
           child: Text(
             "Esqueceu a senha?",
             style: TextStyle(
-                color: Color.fromARGB(255, 255, 255, 255), fontSize: 15),
+                color: Color.fromARGB(255, 157, 157, 157), fontSize: 15),
           )),
     );
   }
@@ -42,23 +42,15 @@ class LoginPetState extends State<LoginPet> {
     return Container(
       alignment: Alignment.center,
       child: ElevatedButton(
-        onPressed: () async {
+        onPressed: () {
           if (_formKey.currentState!.validate()) {
             _formKey.currentState!.save();
-            try {
-              // Login logic here
-            } catch (e) {
-              print(e);
-            }
-          }
+          } else {}
         },
         child: Text("LOGIN",
             style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold)),
         style: ElevatedButton.styleFrom(
           minimumSize: Size(double.infinity, 55),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(60),
-          ),
           primary: Color.fromARGB(255, 223, 204, 152),
           onPrimary: Color.fromARGB(255, 0, 0, 0),
         ),
@@ -88,16 +80,17 @@ class LoginPetState extends State<LoginPet> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     TextFormField(
+                      keyboardType: TextInputType.emailAddress,
+                      controller: emailText,
                       validator: (value) {
-                        if (value!.isEmpty || value == null) {
+                        if (value == '') {
                           return 'Digite um endereço de e-mail válido';
                         }
                         return null;
                       },
                       style: TextStyle(
-                          color: const Color.fromARGB(255, 157, 157, 157)),
-                      keyboardType: TextInputType.emailAddress,
-                      controller: emailText,
+                          color: const Color.fromARGB(255, 157, 157, 157)
+                      ),
                       decoration: InputDecoration(
                         contentPadding: EdgeInsets.all(20),
                         filled: true,
@@ -106,13 +99,11 @@ class LoginPetState extends State<LoginPet> {
                         hintStyle: TextStyle(
                             color: const Color.fromARGB(255, 157, 157, 157)),
                         focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(60),
                           borderSide: BorderSide(
                               color: Color.fromARGB(255, 223, 204, 152),
                               width: 1.5),
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(60),
                           borderSide: BorderSide(
                               color: Color.fromARGB(255, 0, 0, 0), width: 1.5),
                         ),
@@ -121,19 +112,20 @@ class LoginPetState extends State<LoginPet> {
                         _email = value!;
                       },
                     ),
-                    Container(height: 20),
+                    Container(height: 30),
                     TextFormField(
+                      keyboardType: TextInputType.visiblePassword,
+                      controller: passwordText,
+                      obscureText: _isObscureText,
                       validator: (value) {
-                        if (value!.isEmpty || value == null) {
+                        if (value == '') {
                           return 'Digite uma senha válida';
                         }
                         return null;
                       },
                       style: TextStyle(
-                          color: const Color.fromARGB(255, 157, 157, 157)),
-                      keyboardType: TextInputType.visiblePassword,
-                      controller: passwordText,
-                      obscureText: _isObscureText,
+                          color: const Color.fromARGB(255, 157, 157, 157)
+                      ),
                       decoration: InputDecoration(
                         suffixIcon: IconButton(
                           color: const Color.fromARGB(255, 223, 204, 152),
@@ -154,13 +146,11 @@ class LoginPetState extends State<LoginPet> {
                         hintStyle: TextStyle(
                             color: const Color.fromARGB(255, 157, 157, 157)),
                         focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(60),
                           borderSide: BorderSide(
                               color: Color.fromARGB(255, 223, 204, 152),
                               width: 1.5),
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(60),
                           borderSide: BorderSide(
                               color: Color.fromARGB(255, 0, 0, 0), width: 1.5),
                         ),
@@ -180,7 +170,7 @@ class LoginPetState extends State<LoginPet> {
                         Text(
                           "Já tem uma conta?",
                           style: TextStyle(
-                              color: const Color.fromARGB(255, 223, 204, 152),
+                              color: Color.fromARGB(255, 157, 157, 157),
                               fontSize: 16),
                         ),
                         TextButton(
@@ -193,7 +183,7 @@ class LoginPetState extends State<LoginPet> {
                             child: Text(
                               "Inscreva-se",
                               style: TextStyle(
-                                  color: Color.fromARGB(255, 36, 78, 246),
+                                  color: Color.fromARGB(255, 21, 102, 252),
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold),
                             ))
