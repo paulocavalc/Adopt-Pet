@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_constructors_in_immutables, file_names
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_constructors_in_immutables, file_names, prefer_const_literals_to_create_immutables
 
 import 'package:boa_tarde/model/duck-model.dart';
 import 'package:flutter/material.dart';
@@ -34,6 +34,15 @@ class DuckDetailScreen extends StatelessWidget {
                 width: double.infinity,
                 height: 450,
                 fit: BoxFit.cover
+              ),
+              Container(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Icon(Icons.access_time, color: Color.fromARGB(255, 223, 204, 152)),
+                  Icon(Icons.bookmark_outline, color: Color.fromARGB(255, 223, 204, 152)),
+                  Icon(Icons.favorite_outline, color: Color.fromARGB(255, 223, 204, 152)),
+                ],
               ),
               Padding(
                 padding: EdgeInsets.all(8.0),

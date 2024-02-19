@@ -27,14 +27,17 @@ class DogDetailScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.network(dogs.dog,
-                  width: double.infinity, height: 450, fit: BoxFit.cover),
+                  width: double.infinity,
+                  height: 450,
+                  fit: BoxFit.cover
+              ),
               Container(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Icon(Icons.access_time),
-                  Icon(Icons.bookmark_outline),
-                  Icon(Icons.favorite_outline),
+                  Icon(Icons.access_time, color: Color.fromARGB(255, 223, 204, 152)),
+                  Icon(Icons.bookmark_outline, color: Color.fromARGB(255, 223, 204, 152)),
+                  Icon(Icons.favorite_outline, color: Color.fromARGB(255, 223, 204, 152)),
                 ],
               ),
               Padding(
