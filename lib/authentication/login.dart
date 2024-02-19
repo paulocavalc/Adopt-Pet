@@ -71,125 +71,127 @@ class LoginPetState extends State<LoginPet> {
           ),
         ),
         backgroundColor: Color.fromARGB(255, 45, 45, 45),
-        body: Form(
-          key: _formKey,
-          child: Center(
-            child: Container(
-              width: 400,
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    TextFormField(
-                      keyboardType: TextInputType.emailAddress,
-                      controller: emailText,
-                      validator: (value) {
-                        if (value == '') {
-                          return 'Digite um endereço de e-mail válido';
-                        }
-                        return null;
-                      },
-                      style: TextStyle(
-                          color: const Color.fromARGB(255, 157, 157, 157)
+        body: Center(
+          child: SingleChildScrollView(
+            child: Form(
+              key: _formKey,
+              child: Container(
+                width: 400,
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TextFormField(
+                        keyboardType: TextInputType.emailAddress,
+                        controller: emailText,
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'Digite um endereço de e-mail válido';
+                          }
+                          return null;
+                        },
+                        style: TextStyle(
+                            color: const Color.fromARGB(255, 157, 157, 157)
+                        ),
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.all(20),
+                          filled: true,
+                          fillColor: const Color.fromARGB(255, 0, 0, 0),
+                          hintText: "E-mail",
+                          hintStyle: TextStyle(
+                              color: const Color.fromARGB(255, 157, 157, 157)),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromARGB(255, 223, 204, 152),
+                                width: 1.5),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromARGB(255, 0, 0, 0), width: 1.5),
+                          ),
+                        ),
+                        onSaved: (value) {
+                          _email = value!;
+                        },
                       ),
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.all(20),
-                        filled: true,
-                        fillColor: const Color.fromARGB(255, 0, 0, 0),
-                        hintText: "E-mail",
-                        hintStyle: TextStyle(
-                            color: const Color.fromARGB(255, 157, 157, 157)),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 223, 204, 152),
-                              width: 1.5),
+                      Container(height: 30),
+                      TextFormField(
+                        keyboardType: TextInputType.visiblePassword,
+                        controller: passwordText,
+                        obscureText: _isObscureText,
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'A senha é necessária';
+                          }
+                          return null;
+                        },
+                        style: TextStyle(
+                            color: const Color.fromARGB(255, 157, 157, 157)
                         ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 0, 0, 0), width: 1.5),
-                        ),
-                      ),
-                      onSaved: (value) {
-                        _email = value!;
-                      },
-                    ),
-                    Container(height: 30),
-                    TextFormField(
-                      keyboardType: TextInputType.visiblePassword,
-                      controller: passwordText,
-                      obscureText: _isObscureText,
-                      validator: (value) {
-                        if (value == '') {
-                          return 'Digite uma senha válida';
-                        }
-                        return null;
-                      },
-                      style: TextStyle(
-                          color: const Color.fromARGB(255, 157, 157, 157)
-                      ),
-                      decoration: InputDecoration(
-                        suffixIcon: IconButton(
-                          color: const Color.fromARGB(255, 223, 204, 152),
-                          padding: EdgeInsetsDirectional.only(end: 20),
-                          icon: _isObscureText
-                              ? Icon(Icons.visibility)
-                              : Icon(Icons.visibility_off),
-                          onPressed: () {
-                            setState(() {
-                              _isObscureText = !_isObscureText;
-                            });
-                          },
-                        ),
-                        contentPadding: EdgeInsets.all(20),
-                        filled: true,
-                        fillColor: const Color.fromARGB(255, 0, 0, 0),
-                        hintText: "Senha",
-                        hintStyle: TextStyle(
-                            color: const Color.fromARGB(255, 157, 157, 157)),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 223, 204, 152),
-                              width: 1.5),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 0, 0, 0), width: 1.5),
-                        ),
-                      ),
-                      onSaved: (value) {
-                        _email = value!;
-                      },
-                    ),
-                    SizedBox(height: 12),
-                    buildForgotPassword(),
-                    SizedBox(height: 24),
-                    buildLoginButton(),
-                    SizedBox(height: 15),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Já tem uma conta?",
-                          style: TextStyle(
-                              color: Color.fromARGB(255, 157, 157, 157),
-                              fontSize: 16),
-                        ),
-                        TextButton(
+                        decoration: InputDecoration(
+                          suffixIcon: IconButton(
+                            color: const Color.fromARGB(255, 223, 204, 152),
+                            padding: EdgeInsetsDirectional.only(end: 20),
+                            icon: _isObscureText
+                                ? Icon(Icons.visibility)
+                                : Icon(Icons.visibility_off),
                             onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => SignUpPet()));
+                              setState(() {
+                                _isObscureText = !_isObscureText;
+                              });
                             },
-                            child: Text(
-                              "Inscreva-se",
-                              style: TextStyle(
-                                  color: Color.fromARGB(255, 21, 102, 252),
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold),
-                            ))
-                      ],
-                    ),
-                  ]),
+                          ),
+                          contentPadding: EdgeInsets.all(20),
+                          filled: true,
+                          fillColor: const Color.fromARGB(255, 0, 0, 0),
+                          hintText: "Senha",
+                          hintStyle: TextStyle(
+                              color: const Color.fromARGB(255, 157, 157, 157)),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromARGB(255, 223, 204, 152),
+                                width: 1.5),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromARGB(255, 0, 0, 0), width: 1.5),
+                          ),
+                        ),
+                        onSaved: (value) {
+                          _email = value!;
+                        },
+                      ),
+                      SizedBox(height: 12),
+                      buildForgotPassword(),
+                      SizedBox(height: 24),
+                      buildLoginButton(),
+                      SizedBox(height: 15),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Já tem uma conta?",
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 157, 157, 157),
+                                fontSize: 16),
+                          ),
+                          TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => SignUpPet()));
+                              },
+                              child: Text(
+                                "Inscreva-se",
+                                style: TextStyle(
+                                    color: Color.fromARGB(255, 21, 102, 252),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold),
+                              ))
+                        ],
+                      ),
+                    ]),
+              ),
             ),
           ),
         )
