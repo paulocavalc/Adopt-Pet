@@ -2,7 +2,6 @@
 
 import 'package:boa_tarde/model/dog-model.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DogDetailScreen extends StatelessWidget {
@@ -34,14 +33,6 @@ class DogDetailScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Icon(Icons.access_time),
-                  Expanded(
-                    child: Text(
-                      DateFormat.yMMMMEEEEd().format(DateTime.now()), 
-                      style: TextStyle(
-                        color: const Color.fromARGB(255, 255, 255, 255)
-                      ),
-                    ),
-                  ),
                   Icon(Icons.bookmark_outline),
                   Icon(Icons.favorite_outline),
                 ],
