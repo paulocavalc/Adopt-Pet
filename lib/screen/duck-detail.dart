@@ -37,11 +37,17 @@ class DuckDetailScreen extends StatelessWidget {
               ),
               Container(height: 10),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(Icons.access_time, color: Color.fromARGB(255, 223, 204, 152)),
-                  Icon(Icons.bookmark_outline, color: Color.fromARGB(255, 223, 204, 152)),
                   Icon(Icons.favorite_outline, color: Color.fromARGB(255, 223, 204, 152)),
+                  SizedBox(width: 10),
+                  Expanded(child: Text("1.950", style: TextStyle(color: Colors.white))),
+                  Icon(Icons.comment_outlined, color: Color.fromARGB(255, 223, 204, 152)),
+                  SizedBox(width: 10),
+                  Expanded(child: Text("640", style: TextStyle(color: Colors.white))),
+                  Icon(Icons.access_time, color: Color.fromARGB(255, 223, 204, 152)),
+                  SizedBox(width: 10),
+                  Expanded(child: Text("27 Janeiro, 2024", style: TextStyle(color: Colors.white))),
                 ],
               ),
               Padding(
