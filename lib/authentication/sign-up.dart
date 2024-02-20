@@ -77,7 +77,7 @@ class SignUpPetState extends State<SignUpPet> {
                         controller: nameText,
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'Digite seu nome completo';
+                            return 'O nome completo é necessário';
                           }
                           return null;
                         },
@@ -111,7 +111,7 @@ class SignUpPetState extends State<SignUpPet> {
                         controller: emailText,
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'Digite seu e-mail';
+                            return 'O e-mail é necessário';
                           }
                           return null;
                         },

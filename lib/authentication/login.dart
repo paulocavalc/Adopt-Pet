@@ -85,7 +85,7 @@ class LoginPetState extends State<LoginPet> {
                         controller: emailText,
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'Digite um endereço de e-mail válido';
+                            return 'O e-mail é necessário';
                           }
                           return null;
                         },
